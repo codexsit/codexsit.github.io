@@ -1,10 +1,5 @@
 function App() {
-
-  return (
-    <>
-      <h1 className="text-center">CodeX</h1>
-    </>
-  );
+  return <h1 className="text-center">CodeX</h1>;
 }
 
 export default App;
