@@ -9,6 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "lint:fix": "eslint --fix .",
+    "style": "prettier --write {src,test}/**/* ./*.{json,*.json} !package-lock.json -u --no-error-on-unmatched-pattern",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -49,6 +50,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,html,css,json}": [
       "prettier --write",
+      "eslint --fix src/",
       "git add"
     ]
   }
