@@ -32,6 +32,5 @@ module.exports = {
     "react/jsx-pascal-case": ["error", { allowAllCaps: true }],
     "no-console": "error",
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-    "prettier/prettier": "off",
   },
 };
