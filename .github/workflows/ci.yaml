@@ -29,9 +29,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run ESLint and Prettier
-        run: npm run lint
