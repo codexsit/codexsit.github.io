@@ -10,4 +10,6 @@ This is the official website of CodeX Club, SIT.
 - Firebase
 
 ### Contributors
+
 Ankush Dutta
+Miran Firdausi
