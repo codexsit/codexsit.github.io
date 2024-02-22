@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-      - develop
+      - dev
   pull_request:
     branches:
       - main
-      - develop
+      - dev
 
 jobs:
-  lint:
-    name: Lint
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20.11.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
 
       - name: Install dependencies
         run: npm install
