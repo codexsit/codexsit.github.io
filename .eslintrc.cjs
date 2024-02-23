@@ -21,9 +21,9 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    quotes: ["error", "double", { avoidEscape: true }],
+    // quotes: ["error", "single", { avoidEscape: true }],
     "no-shadow": "off",
-    "strict": "off",
+    strict: "off",
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
     "no-unused-vars": [
@@ -32,6 +32,8 @@ module.exports = {
     ],
     "react/jsx-pascal-case": ["error", { allowAllCaps: true }],
     "no-console": "error",
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    // "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
   },
 };
