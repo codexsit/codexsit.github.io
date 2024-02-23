@@ -1,18 +1,18 @@
-name: Lint
+name: Build
 
 on:
   push:
     branches:
       - main
-      - develop
+      - dev
   pull_request:
     branches:
       - main
-      - develop
+      - dev
 
 jobs:
-  lint:
-    name: Lint
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint and Prettier
-        run: npm run lint
+      - name: Build project
+        run: npm run build
