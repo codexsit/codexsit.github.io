@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     quotes: ["error", "double", { avoidEscape: true }],
     "no-shadow": "off",
+    "strict": "off",
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
     "no-unused-vars": [
