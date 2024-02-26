@@ -4,12 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#232323',
-        primary: '#F24E3F',
-        text: '#F7F7F7',
+        background: "#232323",
+        primary: "#E76941",
+        text: "#F7F7F7",
+      },
+      screens: {
+        xs: "0px",
+        sm: "600px",
+        md: "900px",
+        lg: "1200",
+        xl: "1536px",
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
