@@ -6,17 +6,19 @@ export default {
       colors: {
         background: "#232323",
         primary: "#E76941",
-        text: "#F7F7F7",
+        foreground: "#F7F7F7",
+        gray: "737373",
       },
       screens: {
         xs: "0px",
         sm: "600px",
-        md: "900px",
-        lg: "1200",
-        xl: "1536px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ["Poppins", "sans-serif"],
+        gothic: ["League Gothic", "sans-serif"]
       },
     },
   },
