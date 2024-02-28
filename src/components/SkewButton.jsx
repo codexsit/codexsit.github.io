@@ -7,7 +7,7 @@ function SkewButton({ text, link }) {
       <Link to={link}>
         <button
           type="button"
-          className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none bg-white text-background font-sans font-extrabold px-4 py-2 -skew-x-12"
+          className="transform hover:-translate-y-1 transition motion-reduce:transition-none motion-reduce:hover:transform-none bg-white text-background font-sans font-extrabold px-4 py-2 -skew-x-12"
         >
           {text}
         </button>
