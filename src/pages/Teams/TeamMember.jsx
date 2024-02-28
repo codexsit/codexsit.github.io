@@ -26,7 +26,7 @@ function TeamMember({ member }) {
           {description}
         </p>
         <div className="flex justify-center space-x-4">
-        <Link
+          <Link
             to={linkedin}
             target="_blank"
             rel="noreferrer"
