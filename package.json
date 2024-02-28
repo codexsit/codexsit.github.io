@@ -13,11 +13,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/league-gothic": "^5.0.18",
+    "@fontsource/poppins": "^5.0.8",
+    "@vitejs/plugin-react": "^4.2.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.4",
-    "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.1.0"
   },
   "devDependencies": {

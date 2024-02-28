@@ -1,15 +1,24 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/900.css";
+@import "@fontsource/league-gothic";
 
 /* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins", "sans-serif";
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.text-outlined {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #737373;
 }
