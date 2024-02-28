@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import LinkedInIcon from "@/assets/images/Teams/linkedin.svg";
 import GithubIcon from "@/assets/images/Teams/github.svg";
 import InstagramIcon from "@/assets/images/Teams/instagram.svg";
@@ -25,30 +26,30 @@ function TeamMember({ member }) {
           {description}
         </p>
         <div className="flex justify-center space-x-4">
-          <a
-            href={linkedin}
+        <Link
+            to={linkedin}
             target="_blank"
             rel="noreferrer"
             className="text-white font-sans"
           >
             <img src={LinkedInIcon} alt="Linkedin" className="w-10 h-10 p-2" />
-          </a>
-          <a
-            href={github}
+          </Link>
+          <Link
+            to={github}
             target="_blank"
             rel="noreferrer"
             className="text-white font-sans"
           >
             <img src={GithubIcon} alt="Github" className="w-10 h-10 p-2" />
-          </a>
-          <a
-            href={instagram}
+          </Link>
+          <Link
+            to={instagram}
             target="_blank"
             rel="noreferrer"
             className="text-white font-sans"
           >
             <img src={InstagramIcon} alt="GitHub" className="w-10 h-10 p-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
