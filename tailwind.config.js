@@ -13,7 +13,7 @@ export default {
         secondary: {
           DEFAULT: "#737373",
           light: "#A3A3A3",
-          dark: "#494949",
+          dark: "#222222",
         },
         background: {
           dark: "#232323",
@@ -22,7 +22,11 @@ export default {
         text: {
           light: "#F7F7F7",
           dark: "#232323",
-        }   
+        },   
+        gradient: {
+          light: "#383838",
+          dark: "#222222 ",
+        }
       },
       screens: {
         xs: "0px",

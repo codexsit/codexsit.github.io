@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function Heading({ text }) {
   return (
-    <div className="relative text-center font-black uppercase tracking-tighter m-4">
+    <div className="relative text-center font-black uppercase tracking-tighter -m-2">
       <div className="xs:text-4xl sm:text-6xl lg:text-8xl text-outlined text-transparent leading-[145%]">
         {text}
       </div>
