@@ -9,20 +9,20 @@ function TeamMember({ member }) {
     member;
 
   return (
-    <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer bg-zinc-700 rounded-3xl shadow-2xl shadow-background overflow-hidden p-2 space-y-4 align-middle aspect-ratio aspect-ratio-1/1">
-      <div className="border-8xl border-4 bg-zinc-700 rounded-3xl overflow-hidden p-3 space-y-4 align-middle aspect-ratio aspect-ratio-1/1">
+    <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:drop-shadow-2xl drop-shadow-background cursor-pointer bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl shadow-2xl shadow-background overflow-hidden p-2 space-y-4 align-middle aspect-ratio aspect-ratio-1/1">
+      <div className="border-8xl border-4 border-secondary-light bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl overflow-hidden p-3 space-y-4 align-middle aspect-ratio aspect-ratio-1/1">
         <img
           src={image}
           alt={name}
-          className="w-40 h-40 rounded-full mx-auto"
+          className="w-40 h-40 p-2 rounded-full mx-auto"
         />
-        <h2 className="text-3xl font-sans font-semi-bold text-center text-white">
+        <h2 className="text-3xl font-poppins font-semi-bold text-center text-text-light">
           {name}
         </h2>
-        <p className="text-l font-sans text-center font-bold text-white">
+        <p className="text-l font-poppins text-center font-bold text-text-light">
           {position}
         </p>
-        <p className="font-sans text-center text-wrap text-white">
+        <p className="font-poppins text-center text-wrap text-text-light">
           {description}
         </p>
         <div className="flex justify-center space-x-4">
