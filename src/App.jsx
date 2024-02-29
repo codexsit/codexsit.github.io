@@ -1,10 +1,12 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import routes from "@/routes/index";
+import Navbar from '@/components/Navbar/index';
 
 function App() {
   return (
     <Router>
+      <Navbar/>
       <ToastContainer />
       <Routes>
         {routes.map((route) => (
