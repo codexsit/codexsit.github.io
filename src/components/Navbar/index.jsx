@@ -1,51 +1,36 @@
-// import React from 'react';
+// Todo: use font awesome icons or google icons
 import { Link } from "react-router-dom";
-// import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import PropTypes, { string } from "prop-types";
 import Logo from "@/assets/images/logo.svg";
 
-const links = [
-  { name: "About Us", path: "#" },
-  { name: "Our Team", path: "#" },
-  { name: "Gallery", path: "#" },
-  { name: "Contact", path: "#" },
-  { name: "Projects", path: "#" },
-];
-function Header () {
-  const [activeLink, setActiveLink] = useState(null);
-//   const [isOpen, _ ] = useState(false);
+function Navbar({ links }) {
+  // Todo: implement active link
+
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:px-10 py-4 px-7 md:flex justify-between items-center bg-black ">
-        <div className="flex text-2x1 cursor-pointer items-center gap-2">
-          {/* <logo/> */}
-          <img src={Logo} alt="logo" className="w-22 h-22" />
-        </div>
-        
-        <Link
-           to='/' 
-          className="w-7 h-7 text-white absolute right-8 top-6 cursor-pointer md:hidden"
-        >
-          {/* {isOpen ? <XMarkIcon /> : <Bars3BottomRightIcon />} */}
-        </Link>
-        
-        <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in `}
-        >
-          {links.map((link, index) => (
-            <li
-              key={link.name}
-              className={`font-semibold my-7 md:my-0 md:ml-8   ${activeLink === index ? "hover:border-b-2 border-red-500" : ""}`}
-            >
-              <Link to={link.path} className="hover:border-b-2 border-white transition-all duration-300 ease-in-out" onClick={() => setActiveLink(index)}>{link.name}</Link>
-            </li>
-            
-            
-          ))}
-        </ul>
-      </div>
-    </div>
+    <nav className="shadow-md w-full flex justify-between items-center px-6 bg-secondary-dark">
+      <Link to="/" className="cursor-pointer">
+        <img src={Logo} alt="logo" className="cursor-pointer" />
+      </Link>
+
+      <ul className="md:flex md:items-center md:pb-0 pb-12  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in">
+        {/* <Link to="/" className="w-7 h-7 text-white cursor-pointer md:hidden">
+          {isOpen ? <XMarkIcon /> : <Bars3BottomRightIcon />}
+        </Link> */}
+        {links.map((link) => (
+          <li
+            key={link.name}
+            className="font-semibold text-white md:my-0 md:ml-8 border-b-2 border-transparent hover:border-red-500"
+          >
+            <Link to={link.path}>{link.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
+}
+
+Navbar.propTypes = {
+  links: PropTypes.arrayOf(string).isRequired,
 };
 
-export default Header;
+export default Navbar;
