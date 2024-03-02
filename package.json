@@ -4,10 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://codexsit.github.io/CodeX-Website/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/codeXsit/CodeX-Website.git"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
