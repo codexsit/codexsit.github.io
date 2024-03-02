@@ -1,8 +1,13 @@
 {
-  "name": "vite-project",
+  "name": "codex-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://codexsit.github.io/CodeX-Website/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeXsit/CodeX-Website.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +15,8 @@
     "preview": "vite preview",
     "lint:fix": "eslint --fix .",
     "style": "prettier --write {src,test}/**/* ./*.{json,*.json} !package-lock.json -u --no-error-on-unmatched-pattern",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@fontsource/league-gothic": "^5.0.18",
@@ -38,6 +44,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.1.1",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.2",
     "postcss-cli": "^11.0.0",
