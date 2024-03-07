@@ -13,7 +13,8 @@
   font-family: "poppins", "sans-serif";
 }
 
-body,#root {
+body,
+#root {
   background-color: theme("colors.secondary.dark");
 }
 
