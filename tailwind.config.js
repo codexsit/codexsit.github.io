@@ -22,11 +22,11 @@ export default {
         text: {
           light: "#F7F7F7",
           dark: "#232323",
-        },   
+        },
         gradient: {
           light: "#383838",
           dark: "#222222 ",
-        }
+        },
       },
       screens: {
         xs: "0px",
@@ -37,7 +37,7 @@ export default {
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        gothic: ["League Gothic", "sans-serif"]
+        gothic: ["League Gothic", "sans-serif"],
       },
     },
   },
