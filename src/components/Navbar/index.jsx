@@ -1,51 +1,66 @@
-// import React from 'react';
-import { Link } from "react-router-dom";
-// import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import Logo from "@/assets/images/logo.svg";
+import closeIcon from "@/assets/images/close.svg";
+import menuIcon from "@/assets/images/menu.svg";
 
-const links = [
-  { name: "About Us", path: "#" },
-  { name: "Our Team", path: "#" },
-  { name: "Gallery", path: "#" },
-  { name: "Contact", path: "#" },
-  { name: "Projects", path: "#" },
-];
-function Header () {
-  const [activeLink, setActiveLink] = useState(null);
-//   const [isOpen, _ ] = useState(false);
+function Navbar({ links }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:px-10 py-4 px-7 md:flex justify-between items-center bg-black ">
-        <div className="flex text-2x1 cursor-pointer items-center gap-2">
-          {/* <logo/> */}
-          <img src={Logo} alt="logo" className="w-22 h-22" />
-        </div>
-        
-        <Link
-           to='/' 
-          className="w-7 h-7 text-white absolute right-8 top-6 cursor-pointer md:hidden"
-        >
-          {/* {isOpen ? <XMarkIcon /> : <Bars3BottomRightIcon />} */}
-        </Link>
-        
-        <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in `}
-        >
-          {links.map((link, index) => (
-            <li
-              key={link.name}
-              className={`font-semibold my-7 md:my-0 md:ml-8   ${activeLink === index ? "hover:border-b-2 border-red-500" : ""}`}
-            >
-              <Link to={link.path} className="hover:border-b-2 border-white transition-all duration-300 ease-in-out" onClick={() => setActiveLink(index)}>{link.name}</Link>
-            </li>
-            
-            
-          ))}
-        </ul>
-      </div>
-    </div>
+    <nav className=" shadow-md w-full flex justify-between items-center px-6 bg-secondary-dark">
+      <Link to="/" className="cursor-pointer">
+        <img src={Logo} alt="logo" />
+      </Link>
+
+      <ul
+        className={`
+          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 
+          transition-all duration-500 ease-in
+          ${isOpen ? "flex flex-col " : "hidden"}
+        `}
+      >
+        {links.map((link) => (
+          <li
+            key={link.name}
+            className={`
+              font-semibold text-white md:my-0 md:ml-8
+              border-b-2 
+              ${
+                location.pathname .toLowerCase().includes(link.path.toLowerCase()) 
+                  ? "border-red-500 hover:border-red-700" 
+                  : "border-transparent hover:border-red-500"
+              }
+            `}
+          >
+            <Link to={link.path}>{link.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-7 h-7 text-white cursor-pointer md:hidden"
+      >
+        {isOpen ? (
+          <img src={closeIcon} alt="close"  />
+        ) : (
+          <img src={menuIcon} alt="menu" />
+        )}
+      </button>
+    </nav>
   );
+}
+
+Navbar.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
-export default Header;
+export default Navbar;

@@ -5,12 +5,17 @@
 @import "@fontsource/poppins/900.css";
 @import "@fontsource/league-gothic";
 
+
 /* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins", "sans-serif";
+}
+
+body{
+  background-color: theme("colors.secondary.light");
 }
 
 a {
@@ -21,4 +26,8 @@ a {
 .text-outlined {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #737373;
+}
+
+.active{
+  border-bottom: red solid;
 }
