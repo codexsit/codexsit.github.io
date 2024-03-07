@@ -5,7 +5,7 @@ import About from "@/pages/About/index";
 const routes = [
   {
     lable: "About",
-    path: "/about",
+    path: "/about-us",
     requireAuth: false,
     render: <About />,
   },
