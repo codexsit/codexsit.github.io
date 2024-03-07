@@ -27,7 +27,3 @@ a {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #737373;
 }
-
-.active{
-  border-bottom: red solid;
-}
