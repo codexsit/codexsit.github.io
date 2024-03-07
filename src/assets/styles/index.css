@@ -14,8 +14,9 @@
   font-family: "poppins", "sans-serif";
 }
 
-body {
-  background-color: theme("colors.secondary.light");
+body,
+#root {
+  background-color: theme("colors.secondary.dark");
 }
 
 a {
