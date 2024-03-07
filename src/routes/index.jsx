@@ -1,7 +1,14 @@
 import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
+import About from "@/pages/About/index";
 
 const routes = [
+  {
+    lable: "About",
+    path: "/about",
+    requireAuth: false,
+    render: <About />,
+  },
   {
     lable: "Teams",
     path: "/teams",
