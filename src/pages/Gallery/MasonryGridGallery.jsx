@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heading from "@/components/Heading/index";
 
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
@@ -12,9 +13,7 @@ const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
 ];
 
-
-export function MasonryGridGallery() {
-
+export function Gallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
@@ -46,73 +45,72 @@ export function MasonryGridGallery() {
     // You can add more key handlers here as needed
   };
 
-
   return (
     <div>
-      
-
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4" style={{ margin: "5%" }}>
-      {images.map((image, index) => (
-        <div
-          role="button"
-          aria-label="Open"
-          onClick={() => openModal(index)}
-          onKeyDown={(e) => handleKeyDown(e, index)}
-          tabIndex={0}
-          key={image}
-          className="cursor-pointer"
-        >
-          <img
-            className="h-auto max-w-full rounded-lg aspect-square"
-            src={image}
-            alt={`Gallery image ${index + 1}`}
-          />
-        </div>
-      ))}
-
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="relative">
-            <button
-              type="button"
-              className="absolute top-0 right-0 m-4 text-white bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 border border-gray-700 rounded"
-              onClick={closeModal}
-              aria-label="Close"
-            >
-              <i className="fa-solid fa-xmark"/> 
-
-            </button>
-            <button
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl ml-5"
-              onClick={goToPrevious}
-              aria-label="Previous Image"
-              type="button"
-            >
-              <i className="fa-solid fa-backward"/>
-
-            </button>
-            <button
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl mr-5"
-              onClick={goToNext}
-              aria-label="Next Image"
-              type="button"
-            >
-              <i className="fa-solid fa-forward"/>
-
-            </button>
+      <Heading
+        text="Gallery"
+        className="text-center absolute top-0 left-0 right-0 mb-24"
+      />
+      <div
+        className="grid grid-cols-2 md:grid-cols-3 gap-4"
+        style={{ margin: "5%" }}
+      >
+        {images.map((image, index) => (
+          <div
+            role="button"
+            aria-label="Open"
+            onClick={() => openModal(index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            tabIndex={0}
+            key={image}
+            className="cursor-pointer"
+          >
             <img
-              className="max-w-full rounded-lg"
-              src={images[selectedImageIndex]}
-              alt={`Selected gallery image ${selectedImageIndex + 1}`}
+              className="h-auto max-w-full rounded-lg aspect-square"
+              src={image}
+              alt={`Gallery img ${index + 1}`}
             />
           </div>
-        </div>
-      )}
-    </div>
+        ))}
 
+        {modalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
+            <div className="relative">
+              <button
+                type="button"
+                className="absolute top-0 right-0 m-4 text-white bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 border border-gray-700 rounded"
+                onClick={closeModal}
+                aria-label="Close"
+              >
+                <i className="fa-solid fa-xmark" />
+              </button>
+              <button
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl ml-5"
+                onClick={goToPrevious}
+                aria-label="Previous Image"
+                type="button"
+              >
+                <i className="fa-solid fa-backward" />
+              </button>
+              <button
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl mr-5"
+                onClick={goToNext}
+                aria-label="Next Image"
+                type="button"
+              >
+                <i className="fa-solid fa-forward" />
+              </button>
+              <img
+                className="max-w-full rounded-lg"
+                src={images[selectedImageIndex]}
+                alt={`Selected gallery img ${selectedImageIndex + 1}`}
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-
-export default MasonryGridGallery;
+export default Gallery;

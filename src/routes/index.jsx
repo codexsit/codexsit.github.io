@@ -1,14 +1,14 @@
 import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
 import About from "@/pages/About/index";
-import {MasonryGridGallery}from "../pages/Gallery/MasonryGridGallery";
+import { Gallery } from "../pages/Gallery/MasonryGridGallery";
 
 const routes = [
   {
     lable: "Gallery",
     path: "/gallery",
     requireAuth: false,
-    render: <MasonryGridGallery/>,
+    render: <Gallery />,
   },
   {
     lable: "About",
