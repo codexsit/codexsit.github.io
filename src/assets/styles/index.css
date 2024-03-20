@@ -5,7 +5,6 @@
 @import "@fontsource/poppins/900.css";
 @import "@fontsource/league-gothic";
 
-
 /* Reset default browser styles */
 * {
   margin: 0;
@@ -29,20 +28,17 @@ a {
   -webkit-text-stroke-color: #737373;
 }
 
-
 .words {
-    position: relative;
-    animation: move-words 25s linear infinite;
-    margin: 0;
-  }
-
-
+  position: relative;
+  animation: move-words 25s linear infinite;
+  margin: 0;
+}
 
 @keyframes move-words {
-    0% {
-      left: 100%;
-    }
-    100% {
-      left: -100%;
-    }
+  0% {
+    left: 100%;
   }
+  100% {
+    left: -100%;
+  }
+}

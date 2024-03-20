@@ -29,8 +29,10 @@ function Navbar({ links }) {
               font-semibold text-white md:my-0 md:ml-8
               border-b-2 
               ${
-                location.pathname .toLowerCase().includes(link.path.toLowerCase()) 
-                  ? "border-red-500 hover:border-red-700" 
+                location.pathname
+                  .toLowerCase()
+                  .includes(link.path.toLowerCase())
+                  ? "border-red-500 hover:border-red-700"
                   : "border-transparent hover:border-red-500"
               }
             `}
@@ -45,7 +47,7 @@ function Navbar({ links }) {
         className="w-7 h-7 text-white cursor-pointer md:hidden"
       >
         {isOpen ? (
-          <img src={closeIcon} alt="close"  />
+          <img src={closeIcon} alt="close" />
         ) : (
           <img src={menuIcon} alt="menu" />
         )}

@@ -1,6 +1,6 @@
 import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
-import EventPage from "../pages/Events/index";
+import EventPage from "@/pages/Events/index";
 import About from "@/pages/About/index";
 
 const routes = [
@@ -23,11 +23,11 @@ const routes = [
     render: <Home />,
   },
   {
-    lable:"Events",
+    lable: "Events",
     path: "/events",
     requireAuth: false,
     render: <EventPage />,
-  }
+  },
 ];
 
 export default routes;
