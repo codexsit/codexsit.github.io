@@ -3,7 +3,7 @@
         "name": "Event1",
         "date": "12/12/24",
         "description": "lorem ipsum dolor ",
-        "image": "src/assets/images/Events/image1.jpg",
+        "image": "/CodeX-Website/src/assets/images/Events/image1.jpg",
         "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "alt":"event1-image"
 
@@ -12,7 +12,7 @@
         "name": "Event2",
         "date": "13/12/24",
         "description": "lorem ipsum dolor ",
-        "image": "src/assets/images/Events/image2.jpg",
+        "image": "/CodeX-Website/src/assets/images/Events/image2.jpg",
         "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "alt":"event2-image"
 
@@ -21,7 +21,7 @@
         "name": "Event3",
         "date": "14/12/24",
         "description": "lorem ipsum dolor ",
-        "image": "src/assets/images/Events/image3.jpg",
+        "image": "/CodeX-Website/src/assets/images/Events/image3.jpg",
         "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "alt":"event3-image"
 
@@ -30,7 +30,7 @@
         "name": "Event4",
         "date": "15/12/24",
         "description": "lorem ipsum dolor ",
-        "image": "src/assets/images/Events/image4.jpg",
+        "image": "/CodeX-Website/src/assets/images/Events/image4.jpg",
         "link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "alt":"event4-image"
 
