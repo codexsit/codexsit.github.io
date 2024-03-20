@@ -1,8 +1,15 @@
 import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
 import About from "@/pages/About/index";
+import Gallery from "@/pages/Gallery/Gallery";
 
 const routes = [
+  {
+    lable: "Gallery",
+    path: "/gallery",
+    requireAuth: false,
+    render: <Gallery />,
+  },
   {
     lable: "About",
     path: "/about-us",
