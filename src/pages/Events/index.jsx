@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./card";
-import userData from "./events.json";
+import events from "./events.json";
 
 function EventPage() {
   const borderStyle = {
@@ -8,10 +8,10 @@ function EventPage() {
     WebkitTextStrokeWidth: "0.5px",
     WebkitTextStrokeColor: "white",
   };
-  const [users, setUsers] = useState([]);
+  const [events, setEvent] = useState([]);
 
   useEffect(() => {
-    setUsers(userData);
+    setEvent(events);
   }, []);
   return (
     <div className="">
@@ -45,8 +45,8 @@ function EventPage() {
       </div>
       <div className=" flex flex-wrap gap-10 justify-center align-items py-10">
         {/* Add enough content to exceed the width of the container */}
-        {users.map((user) => (
-          <Card key={user.name} user={user} />
+        {events.map((event) => (
+          <Card key={event.name} event={event} />
         ))}
       </div>
     </div>
