@@ -10,46 +10,51 @@ function Navbar({ links }) {
   const location = useLocation();
 
   return (
-    <nav className=" shadow-md w-full flex justify-between items-center px-6 bg-secondary-dark">
-      <Link to="/" className="cursor-pointer">
-        <img src={Logo} alt="logo" />
-      </Link>
-
+    <nav
+      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
+    >
+      <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
+        <Link to="/" className="cursor-pointer">
+          <img src={Logo} className="w-[10rem]" alt="logo" />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-7 h-7 text-white cursor-pointer md:hidden"
+        >
+          {isOpen ? (
+            <img src={closeIcon} alt="close" />
+          ) : (
+            <img src={menuIcon} alt="menu" />
+          )}
+        </button>
+      </div>
       <ul
         className={`
-          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 
-          transition-all duration-500 ease-in
-          ${isOpen ? "flex flex-col " : "hidden"}
+          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 xs:justify-center xs:gap-y-12
+          ${isOpen ? "flex flex-col grow" : "hidden"}
         `}
       >
         {links.map((link) => (
           <li
             key={link.name}
             className={`
-              font-semibold text-white md:my-0 md:ml-8
-              border-b-2 
-              ${
-                location.pathname .toLowerCase().includes(link.path.toLowerCase()) 
-                  ? "border-red-500 hover:border-red-700" 
-                  : "border-transparent hover:border-red-500"
-              }
+            group font-regular text-white md:my-0 md:ml-8 transition-all hover:text-primary
             `}
           >
             <Link to={link.path}>{link.name}</Link>
+            <span
+              class={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
+                location.pathname
+                  .toLowerCase()
+                  .includes(link.path.toLowerCase())
+                  ? "w-full"
+                  : "max-w-0"
+              }`}
+            ></span>
           </li>
         ))}
       </ul>
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-7 h-7 text-white cursor-pointer md:hidden"
-      >
-        {isOpen ? (
-          <img src={closeIcon} alt="close"  />
-        ) : (
-          <img src={menuIcon} alt="menu" />
-        )}
-      </button>
     </nav>
   );
 }
