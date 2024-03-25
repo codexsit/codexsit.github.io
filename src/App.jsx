@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Our Team", path: "/teams" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" },
-  { name: "Projects", path: "/projects" },
+  { name: "Community", path: "/community" },
 ];
 
 function App() {
