@@ -17,16 +17,22 @@ const routes = [
     render: <About />,
   },
   {
-    lable: "Teams",
+    label: "Teams",
     path: "/teams",
     requireAuth: false,
     render: <Teams />,
   },
   {
-    lable: "Home",
+    label: "Home",
     path: "/",
     requireAuth: false,
     render: <Home />,
+  },
+  {
+    label: "Page Not Found",
+    path: "/*",
+    requireAuth: false,
+    render: <PageNotFound />,
   },
 ];
 
