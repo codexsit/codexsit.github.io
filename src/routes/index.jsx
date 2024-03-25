@@ -2,6 +2,7 @@ import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
 import About from "@/pages/About/index";
 import Gallery from "@/pages/Gallery/Gallery";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes = [
   {
