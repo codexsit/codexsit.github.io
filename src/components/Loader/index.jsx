@@ -1,7 +1,7 @@
-import '@/components/Loader/index.css';
+import "@/components/Loader/index.css";
 
 function Loader() {
-  return(
+  return (
     <div>
       <div className="animation01">
         <div className="rhombus_small">
@@ -76,5 +76,5 @@ function Loader() {
     </div>
   );
 }
-  
+
 export default Loader;
