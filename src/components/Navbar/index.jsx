@@ -44,14 +44,14 @@ function Navbar({ links }) {
           >
             <Link to={link.path}>{link.name}</Link>
             <span
-              class={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
+              className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
                 location.pathname
                   .toLowerCase()
                   .includes(link.path.toLowerCase())
                   ? "w-full"
                   : "max-w-0"
               }`}
-            ></span>
+            />
           </li>
         ))}
       </ul>

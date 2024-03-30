@@ -2,6 +2,7 @@ import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
 import About from "@/pages/About/index";
 import Gallery from "@/pages/Gallery/Gallery";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes = [
   {
@@ -17,16 +18,22 @@ const routes = [
     render: <About />,
   },
   {
-    lable: "Teams",
+    label: "Teams",
     path: "/teams",
     requireAuth: false,
     render: <Teams />,
   },
   {
-    lable: "Home",
+    label: "Home",
     path: "/",
     requireAuth: false,
     render: <Home />,
+  },
+  {
+    label: "Page Not Found",
+    path: "/*",
+    requireAuth: false,
+    render: <PageNotFound />,
   },
 ];
 

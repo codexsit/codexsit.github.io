@@ -3,21 +3,18 @@ import { ToastContainer } from "react-toastify";
 import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
 
-
-
 const navLinks = [
-  {name: "About Us", path: "/about-us"},
-  {name: "Our Team", path: "/teams"},
-  {name: "Gallery", path: "/gallery"},
-  {name: "Contact", path: "/contact"},
-  {name: "Projects", path: "/projects"}
- 
+  { name: "About Us", path: "/about-us" },
+  { name: "Our Team", path: "/teams" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Contact", path: "/contact" },
+  { name: "Community", path: "/community" },
 ];
 
 function App() {
   return (
     <Router>
-      <Navbar links={navLinks}/>
+      <Navbar links={navLinks} />
 
       <ToastContainer />
       <Routes>
