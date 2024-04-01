@@ -1,7 +1,10 @@
+import { AnimatePresence } from "framer-motion";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
+import Cursor from "./components/Cursor";
+import CursorVariantProvider from "@/context/CursorVariantProvider";
 
 const navLinks = [
   { name: "About Us", path: "/about-us" },
@@ -13,16 +16,25 @@ const navLinks = [
 
 function App() {
   return (
-    <Router>
-      <Navbar links={navLinks} />
+    <CursorVariantProvider>
+      <AnimatePresence>
+        <Router>
+          <Navbar links={navLinks} />
+          <Cursor />
 
-      <ToastContainer />
-      <Routes>
-        {routes.map((route) => (
-          <Route path={route.path} element={route.render} key={route.lable} />
-        ))}
-      </Routes>
-    </Router>
+          <ToastContainer />
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                path={route.path}
+                element={route.render}
+                key={route.label}
+              />
+            ))}
+          </Routes>
+        </Router>
+      </AnimatePresence>
+    </CursorVariantProvider>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Heading from "@/components/Heading/index";
+import PageTransition from "../../components/PageTransition";
 
 const images = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
@@ -46,7 +47,7 @@ export default function Gallery() {
   };
 
   return (
-    <div>
+    <PageTransition>
       <Heading
         text="Gallery"
         className="text-center absolute top-0 left-0 right-0 mb-24"
@@ -108,6 +109,6 @@ export default function Gallery() {
           <div> </div>
         )}
       </div>
-    </div>
+    </PageTransition>
   );
 }
