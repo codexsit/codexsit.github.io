@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Card from "./card";
 import events from "./events.json";
 
@@ -8,11 +8,11 @@ function EventPage() {
     WebkitTextStrokeWidth: "0.5px",
     WebkitTextStrokeColor: "white",
   };
-  const [events, setEvent] = useState([]);
+  // const [events, setEvent] = useState([]);
 
-  useEffect(() => {
-    setEvent(events);
-  }, []);
+  // useEffect(() => {
+  //   setEvent(events);
+  // }, []);
   return (
     <div className="">
       <div className=" flex flex-row flex-nowrap w-full  overflow-hidden ">

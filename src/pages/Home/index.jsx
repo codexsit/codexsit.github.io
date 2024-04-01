@@ -3,7 +3,7 @@ import Heading from "@/components/Heading";
 function Home() {
   return (
     <>
-      <div className="bg-background-dark h-screen flex">
+      <div className="bg-background-dark h-[calc(100vh-4.6rem)] flex">
         <div className="m-auto">
           <div className="text-7xl md:text-9xl lg:text-[11rem] text-primary text-center font-gothic uppercase">
             Codex, SIT

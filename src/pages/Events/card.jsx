@@ -38,7 +38,7 @@ function Card({ event }) {
   );
 }
 Card.propTypes = {
-  event: PropTypes.isRequired,
+  event: PropTypes.object.isRequired,
 };
 
 export default Card;

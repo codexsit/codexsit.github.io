@@ -10,16 +10,29 @@ function Navbar({ links }) {
   const location = useLocation();
 
   return (
-    <nav className=" shadow-md w-full flex justify-between items-center px-6 bg-secondary-dark">
-      <Link to="/" className="cursor-pointer">
-        <img src={Logo} alt="logo" />
-      </Link>
-
+    <nav
+      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
+    >
+      <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
+        <Link to="/" className="cursor-pointer">
+          <img src={Logo} className="w-[10rem]" alt="logo" />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-7 h-7 text-white cursor-pointer md:hidden"
+        >
+          {isOpen ? (
+            <img src={closeIcon} alt="close" />
+          ) : (
+            <img src={menuIcon} alt="menu" />
+          )}
+        </button>
+      </div>
       <ul
         className={`
-          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 
-          transition-all duration-500 ease-in
-          ${isOpen ? "flex flex-col " : "hidden"}
+          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 xs:justify-center xs:gap-y-12
+          ${isOpen ? "flex flex-col grow" : "hidden"}
         `}
       >
         {links.map((link) => (
@@ -38,9 +51,18 @@ function Navbar({ links }) {
             `}
           >
             <Link to={link.path}>{link.name}</Link>
+            <span
+              className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
+                location.pathname
+                  .toLowerCase()
+                  .includes(link.path.toLowerCase())
+                  ? "w-full"
+                  : "max-w-0"
+              }`}
+            />
           </li>
         ))}
-      </ul>
+      </ul> 
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
