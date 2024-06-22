@@ -31,6 +31,7 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: false },
     ],
     "react/jsx-pascal-case": ["error", { allowAllCaps: true }],
+    "jsx-a11y/mouse-events-have-key-events": "off",
     "no-console": "error",
     "import/no-unresolved": "off",
     "import/extensions": "off",

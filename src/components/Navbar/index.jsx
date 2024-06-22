@@ -1,20 +1,29 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Logo from "@/assets/images/logo.svg";
 import closeIcon from "@/assets/images/close.svg";
 import menuIcon from "@/assets/images/menu.svg";
+import { CursorVariantContext } from "@/context/CursorVariantProvider";
 
 function Navbar({ links }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  const { setCursorVariantNone, setCursorVariantDefault } =
+    useContext(CursorVariantContext);
 
   return (
     <nav
       className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
     >
       <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
-        <Link to="/" className="cursor-pointer">
+        <Link
+          to="/"
+          className="cursor-pointer"
+          onMouseEnter={setCursorVariantNone}
+          onMouseLeave={setCursorVariantDefault}
+        >
           <img src={Logo} className="w-[10rem]" alt="logo" />
         </Link>
         <button
@@ -34,6 +43,8 @@ function Navbar({ links }) {
           md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 xs:justify-center xs:gap-y-12
           ${isOpen ? "flex flex-col grow" : "hidden"}
         `}
+        onMouseEnter={setCursorVariantNone}
+        onMouseLeave={setCursorVariantDefault}
       >
         {links.map((link) => (
           <li

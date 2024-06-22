@@ -6,13 +6,13 @@ import PageNotFound from "../pages/PageNotFound";
 
 const routes = [
   {
-    lable: "Gallery",
+    label: "Gallery",
     path: "/gallery",
     requireAuth: false,
     render: <Gallery />,
   },
   {
-    lable: "About",
+    label: "About",
     path: "/about-us",
     requireAuth: false,
     render: <About />,
