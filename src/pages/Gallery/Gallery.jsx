@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Heading from "@/components/Heading/index";
 import PageTransition from "../../components/PageTransition";
 
@@ -18,33 +18,55 @@ export default function Gallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
+  // Function to open the modal and set the selected image index
   const openModal = (index = 0) => {
     setSelectedImageIndex(index);
     setModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
 
+  // Function to navigate to the previous image
   const goToPrevious = () => {
     setSelectedImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
+  // Function to navigate to the next image
   const goToNext = () => {
     setSelectedImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Function to handle keydown events for modal navigation
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       closeModal();
+    } else if (event.key === "ArrowLeft") {
+      goToPrevious();
+    } else if (event.key === "ArrowRight") {
+      goToNext();
     }
-    // You can add more key handlers here as needed
   };
+
+  // Add event listener for keydown events when modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [modalOpen]);
 
   return (
     <PageTransition>
@@ -54,32 +76,38 @@ export default function Gallery() {
       />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 m-[5%]">
         {images.map((image, index) => (
-          <div
-            role="button"
-            aria-label="Open"
-            onClick={() => openModal(index)}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            tabIndex={0}
-            key={image}
-            className="cursor-pointer"
-          >
-            <img
-              className="h-auto max-w-full rounded-lg aspect-square"
-              src={image}
-              alt={`Gallery img ${index + 1}`}
-            />
-          </div>
+        <div
+        role="button"
+        aria-label="Open"
+        onClick={() => openModal(index)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            openModal(index);
+          }
+        }}
+        tabIndex={0} // Makes the div focusable
+        key={image}
+        className="cursor-pointer"
+      >
+        <img
+          className="h-auto max-w-full rounded-lg aspect-square"
+          src={image}
+          alt={`Gallery img ${index + 1}`}
+        />
+      </div>
+      
         ))}
 
         {modalOpen ? (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-            <div className="relative">
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 overflow-y-auto">
+            <div className="relative max-h-screen max-w-screen-lg">
               <button
                 type="button"
                 className="absolute top-0 right-0 m-4 text-white bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 border border-gray-700 rounded"
                 onClick={closeModal}
                 aria-label="Close"
               >
+                x
                 <i className="fa-solid fa-xmark" />
               </button>
               <button
@@ -88,6 +116,7 @@ export default function Gallery() {
                 aria-label="Previous Image"
                 type="button"
               >
+                &lt;&lt;
                 <i className="fa-solid fa-backward" />
               </button>
               <button
@@ -96,10 +125,11 @@ export default function Gallery() {
                 aria-label="Next Image"
                 type="button"
               >
+                &gt;&gt;
                 <i className="fa-solid fa-forward" />
               </button>
               <img
-                className="max-w-full rounded-lg"
+                className="max-h-screen max-w-full rounded-lg"
                 src={images[selectedImageIndex]}
                 alt={`Selected gallery img ${selectedImageIndex + 1}`}
               />
