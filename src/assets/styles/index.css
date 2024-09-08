@@ -5,7 +5,6 @@
 @import "@fontsource/poppins/900.css";
 @import "@fontsource/league-gothic";
 
-
 /* Reset default browser styles */
 * {
   margin: 0;
@@ -14,8 +13,9 @@
   font-family: "poppins", "sans-serif";
 }
 
-body {
-  background-color: theme("colors.secondary.light");
+body,
+#root {
+  background-color: theme("colors.secondary.dark");
 }
 
 a {

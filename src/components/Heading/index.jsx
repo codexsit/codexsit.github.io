@@ -1,12 +1,27 @@
+import { useContext } from "react";
 import PropTypes from "prop-types";
+import { CursorVariantContext } from "../../context/CursorVariantProvider";
 
-function Heading({ text }) {
+function Heading({ text, className, bgTextStyle, frontTextStyle }) {
+  const { setCursorVariantText, setCursorVariantDefault } =
+    useContext(CursorVariantContext);
+
   return (
-    <div className="relative text-center font-black uppercase tracking-tighter -m-2">
-      <div className="xs:text-4xl sm:text-6xl lg:text-8xl text-outlined text-transparent leading-[145%]">
+    <div
+      className={`relative text-center font-black uppercase tracking-tighter ${className}`}
+    >
+      <div
+        onMouseOver={setCursorVariantText}
+        onMouseOut={setCursorVariantDefault}
+        className={`${bgTextStyle} xs:text-4xl sm:text-6xl lg:text-8xl text-outlined text-transparent`}
+      >
         {text}
       </div>
-      <div className="xs:text-2xl sm:text-4xl lg:text-6xl text-text-light absolute w-full leading-none bottom-[-20%]">
+      <div
+        onMouseOver={setCursorVariantText}
+        onMouseOut={setCursorVariantDefault}
+        className={`${frontTextStyle} xs:text-2xl sm:text-4xl lg:text-6xl absolute w-full leading-none bottom-[-20%]`}
+      >
         {text}
       </div>
     </div>
@@ -15,6 +30,15 @@ function Heading({ text }) {
 
 Heading.propTypes = {
   text: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  bgTextStyle: PropTypes.string,
+  frontTextStyle: PropTypes.string,
+};
+
+Heading.defaultProps = {
+  className: "",
+  bgTextStyle: "",
+  frontTextStyle: "text-text-light",
 };
 
 export default Heading;
