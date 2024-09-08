@@ -11,7 +11,6 @@ const navLinks = [
   { name: "Our Team", path: "/teams" },
   { name: "Events", path: "/events" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Events", path: "/events" },
   { name: "Contact", path: "/contact" },
   { name: "Community", path: "/community" },
 ];

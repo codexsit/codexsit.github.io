@@ -50,15 +50,7 @@ function Navbar({ links }) {
           <li
             key={link.name}
             className={`
-              font-semibold text-white md:my-0 md:ml-8
-              border-b-2 
-              ${
-                location.pathname
-                  .toLowerCase()
-                  .includes(link.path.toLowerCase())
-                  ? "border-red-500 hover:border-red-700"
-                  : "border-transparent hover:border-red-500"
-              }
+            group font-regular text-white md:my-0 md:ml-8 transition-all hover:text-primary
             `}
           >
             <Link to={link.path}>{link.name}</Link>
@@ -73,18 +65,7 @@ function Navbar({ links }) {
             />
           </li>
         ))}
-      </ul> 
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-7 h-7 text-white cursor-pointer md:hidden"
-      >
-        {isOpen ? (
-          <img src={closeIcon} alt="close" />
-        ) : (
-          <img src={menuIcon} alt="menu" />
-        )}
-      </button>
+      </ul>
     </nav>
   );
 }

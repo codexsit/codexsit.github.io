@@ -1,6 +1,5 @@
 import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
-import Events from "@/pages/Events/index";
 import About from "@/pages/About/index";
 import Gallery from "@/pages/Gallery/Gallery";
 import PageNotFound from "../pages/PageNotFound";
@@ -31,12 +30,6 @@ const routes = [
     render: <Home />,
   },
   {
-    label: "Events",
-    path: "/events",
-    requireAuth: false,
-    render: <Events />,
-    },
-    {  
     label: "Page Not Found",
     path: "/*",
     requireAuth: false,
