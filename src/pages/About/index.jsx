@@ -3,10 +3,11 @@ import Stock1 from "@/assets/images/About/stockimage1.svg";
 import Stock3 from "@/assets/images/About/stockimage3.svg";
 import Stock4 from "@/assets/images/About/stockimage4.svg";
 import Oval from "@/assets/images/About/oval.svg";
+import PageTransition from "../../components/PageTransition";
 
 function About() {
   return (
-    <div>
+    <PageTransition>
       <div className="min-h-screen">
         <Heading
           text="ABOUT US"
@@ -124,7 +125,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
 
