@@ -1,68 +1,68 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Logo from "@/assets/images/logo.svg";
 import closeIcon from "@/assets/images/close.svg";
 import menuIcon from "@/assets/images/menu.svg";
-import { CursorVariantContext } from "@/context/CursorVariantProvider";
 
 function Navbar({ links }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const { setCursorVariantNone, setCursorVariantDefault } =
-    useContext(CursorVariantContext);
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <nav
-      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
-    >
-      <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
-        <Link
-          to="/"
-          className="cursor-pointer"
-          onMouseEnter={setCursorVariantNone}
-          onMouseLeave={setCursorVariantDefault}
-        >
-          <img src={Logo} className="w-[10rem]" alt="logo" />
-        </Link>
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-7 h-7 text-white cursor-pointer md:hidden"
-        >
-          {isOpen ? (
-            <img src={closeIcon} alt="close" />
-          ) : (
-            <img src={menuIcon} alt="menu" />
-          )}
-        </button>
-      </div>
+    <nav className="shadow-md w-full flex flex-wrap justify-between items-center px-6 bg-secondary-dark relative">
+      <Link to="/" className="cursor-pointer">
+        <img src={Logo} alt="logo" />
+      </Link>
+
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-7 h-7 text-white cursor-pointer md:hidden"
+      >
+        {isOpen ? (
+          <img src={closeIcon} alt="close" />
+        ) : (
+          <img src={menuIcon} alt="menu" />
+        )}
+      </button>
+
       <ul
         className={`
-          md:flex pl-0 justify-start md:justify-center md:items-center md:pb-0 md:z-auto left-0 xs:justify-center xs:gap-y-12
-          ${isOpen ? "flex flex-col grow" : "hidden"}
+          pl-0 justify-start md:justify-center
+          md:flex md:items-center md:w-auto w-full md:pb-0 pb-12 md:static
+          absolute md:bg-transparent bg-secondary-dark md:z-auto z-50 left-0 
+          transition-all duration-500 ease-in ${isOpen ? "top-full" : "top-[-490px]" }
         `}
-        onMouseEnter={setCursorVariantNone}
-        onMouseLeave={setCursorVariantDefault}
       >
         {links.map((link) => (
           <li
             key={link.name}
-            className={`
-            group font-regular text-white md:my-0 md:ml-8 transition-all hover:text-primary
-            `}
+            className="md:ml-8 md:my-0 my-7 font-semibold relative"
           >
-            <Link to={link.path}>{link.name}</Link>
-            <span
-              className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
-                location.pathname
-                  .toLowerCase()
-                  .includes(link.path.toLowerCase())
-                  ? "w-full"
-                  : "max-w-0"
-              }`}
-            />
+            <Link
+              to={link.path}
+              className={`
+                text-white text-center block px-3 py-2 relative
+                after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+                after:bg-red-500 after:transition-all after:duration-300 after:scale-x-0 after:origin-left
+                hover:after:scale-x-100
+                ${
+                  location.pathname
+                    .toLowerCase()
+                    .includes(link.path.toLowerCase())
+                    ? "w-full"
+                    : "max-w-0"
+                }
+              `}
+              onClick={handleLinkClick}
+            >
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>
