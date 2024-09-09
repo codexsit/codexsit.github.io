@@ -13,6 +13,10 @@ function Navbar({ links }) {
   const { setCursorVariantNone, setCursorVariantDefault } =
     useContext(CursorVariantContext);
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav
       className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
@@ -50,10 +54,12 @@ function Navbar({ links }) {
           <li
             key={link.name}
             className={`
-            group font-regular text-white md:my-0 md:ml-8 transition-all hover:text-primary
+            group font-regular text-white text-center md:my-0 md:ml-8 transition-all hover:text-primary
             `}
           >
-            <Link to={link.path}>{link.name}</Link>
+            <Link to={link.path} onClick={handleLinkClick}>
+              {link.name}
+            </Link>
             <span
               className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
                 location.pathname

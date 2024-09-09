@@ -9,8 +9,8 @@ import CursorVariantProvider from "@/context/CursorVariantProvider";
 const navLinks = [
   { name: "About Us", path: "/about-us" },
   { name: "Our Team", path: "/teams" },
-  { name: "Events", path: "/events" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Events", path: "/events" },
   { name: "Contact Us", path: "/contact" },
 ];
 
