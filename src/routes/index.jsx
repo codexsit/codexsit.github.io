@@ -2,9 +2,16 @@ import Home from "@/pages/Home/index";
 import Teams from "@/pages/Teams/index";
 import About from "@/pages/About/index";
 import Gallery from "@/pages/Gallery/Gallery";
+import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 
 const routes = [
+  {
+    label: "Contact",
+    path: "/contact",
+    requireAuth: false,
+    render: <Contact />,
+  },
   {
     label: "Gallery",
     path: "/gallery",
