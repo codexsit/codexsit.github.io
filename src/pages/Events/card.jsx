@@ -15,12 +15,13 @@ function Card({ event }) {
     } else {
       setTruncatedText(text);
     }
-  }, []);
+  }, [event.description]); // Added dependency
+
   return (
-    <div className="  shadow-lg bg-zinc-600 rounded-2xl max-w-96 h-[30rem] relative">
+    <div className="shadow-lg bg-zinc-600 rounded-2xl max-w-96 h-[30rem] relative">
       <img
         className="w-mag rounded-se-2xl rounded-ss-2xl"
-        src={`${event.image}`}
+        src={event.image}
         alt={event.alt}
       />
       <div className="content-box px-4 pt-2">
@@ -37,8 +38,16 @@ function Card({ event }) {
     </div>
   );
 }
+
 Card.propTypes = {
-  event: PropTypes.object.isRequired,
+  event: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+    link: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Card;
