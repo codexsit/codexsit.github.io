@@ -18,7 +18,7 @@ function Teams() {
               text="MEET OUR TEAM"
               className="text-center absolute top-0 left-0 right-0 mb-24"
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 grid-rows-auto mt-12">
+            <div className="flex flex-row flex-wrap gap-6 justify-center items-center mt-12">
               {teamMembers}
             </div>
             <SkewButton text="SEE ALL" link="/all-members" className="mt-16" />
