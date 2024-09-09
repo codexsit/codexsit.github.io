@@ -11,11 +11,12 @@ export default {
           contrastText: "#F7F7F7",
         },
         secondary: {
-          DEFAULT: "#737373",
+          DEFAULT: "# ",
           light: "#A3A3A3",
           dark: "#222222",
         },
         background: {
+          elevation: "#2a2a2a",
           dark: "#232323",
           light: "#F7F7F7",
         },

@@ -68,7 +68,7 @@ function Navbar({ links }) {
                   ? "w-full"
                   : "max-w-0"
               }`}
-            ></span>
+            />
           </li>
         ))}
       </ul>
