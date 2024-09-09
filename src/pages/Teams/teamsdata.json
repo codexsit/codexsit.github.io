@@ -25,5 +25,14 @@
       "linkedin": "https://linkedin.com/in/john-doe",
       "instagram": "https://instagram.com/john_doe",
       "github": "https://github.com/john-doe"
+    },
+    {
+      "name": "Saksham Gupta",
+      "position": "VICE-PRESIDENT",
+      "image": "/CodeX-Website/images/teams/Saksham-Gupta.jpeg",
+      "description": "Praesent vestibulum libero non diam Praesent vestibulum libero non diam",
+      "linkedin": "https://linkedin.com/in/john-doe",
+      "instagram": "https://instagram.com/john_doe",
+      "github": "https://github.com/john-doe"
     }
   ]
