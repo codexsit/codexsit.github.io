@@ -9,20 +9,20 @@ function TeamMember({ member }) {
     member;
 
   return (
-    <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-200 hover:drop-shadow-2xl drop-shadow-background cursor-pointer bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl shadow-2xl shadow-background overflow-hidden p-2 space-y-4 align-middle max-w-[350px]">
-      <div className="pt-12 border-8xl border-4 h-full border-secondary-light bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl overflow-hidden p-3 space-y-4 align-middle">
+    <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-200 hover:drop-shadow-2xl drop-shadow-background cursor-pointer bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl shadow-2xl shadow-background overflow-hidden p-2 align-middle max-w-[350px]">
+      <div className="py-12 border-8xl border-4 h-full border-secondary-light bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl overflow-hidden p-3 align-middle">
         <img
           src={image}
           alt={name}
           className="w-32 h-32 rounded-full mx-auto"
         />
-        <h2 className="text-2xl mt-16 font-poppins font-thin text-center text-text-light">
+        <h2 className="text-xl mt-8 font-poppins font-thin text-center tracking-wide text-text-light">
           {name}
         </h2>
-        <p className="text-l font-poppins text-center font-bold text-text-light">
+        <p className="text-sm mt-2 font-poppins text-center font-semibold tracking-wide text-text-light">
           {position}
         </p>
-        <p className="font-poppins text-center text-wrap text-text-light">
+        <p className="text-sm font-poppins my-4 text-center text-wrap text-secondary-light">
           {description}
         </p>
         <div className="flex justify-center space-x-4">
