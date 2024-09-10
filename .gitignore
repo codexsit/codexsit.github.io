@@ -26,3 +26,5 @@ dist-ssr
 # package resolution config
 package-lock.json
 yarn.lock
+
+.env
