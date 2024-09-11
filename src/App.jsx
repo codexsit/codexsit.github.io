@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -5,6 +6,7 @@ import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
 import Cursor from "./components/Cursor";
 import CursorVariantProvider from "@/context/CursorVariantProvider";
+import Loader from "@/components/Loader";
 
 const navLinks = [
   { name: "About Us", path: "/about-us" },
@@ -15,24 +17,34 @@ const navLinks = [
 ];
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  // Function to be called when the loader finishes
+  const handleLoadComplete = () => {
+    setLoading(false); // Set loading to false once the loader is done
+  };
+
   return (
     <CursorVariantProvider>
       <AnimatePresence>
-        <Router>
-          <Navbar links={navLinks} />
-          <Cursor />
-
-          <ToastContainer />
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                path={route.path}
-                element={route.render}
-                key={route.label}
-              />
-            ))}
-          </Routes>
-        </Router>
+        {loading ? (
+          <Loader onLoadComplete={handleLoadComplete} />
+        ) : (
+          <Router>
+            <Navbar links={navLinks} />
+            <Cursor />
+            <ToastContainer />
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  path={route.path}
+                  element={route.render}
+                  key={route.label}
+                />
+              ))}
+            </Routes>
+          </Router>
+        )}
       </AnimatePresence>
     </CursorVariantProvider>
   );

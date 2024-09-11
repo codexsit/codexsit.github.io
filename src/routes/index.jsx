@@ -4,8 +4,15 @@ import About from "@/pages/About/index";
 import Gallery from "@/pages/Gallery/Gallery";
 import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
+import Loader from "@/components/Loader";
 
 const routes = [
+  {
+    label: "Loader",
+    path: "/loader",
+    requireAuth: false,
+    render: <Loader />,
+  },
   {
     label: "Contact",
     path: "/contact",
