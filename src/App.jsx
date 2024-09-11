@@ -5,6 +5,7 @@ import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
 import Cursor from "./components/Cursor";
 import CursorVariantProvider from "@/context/CursorVariantProvider";
+import Loader from "@/components/Loader";
 
 const navLinks = [
   { name: "About Us", path: "/about-us" },
@@ -17,22 +18,22 @@ const navLinks = [
 function App() {
   return (
     <CursorVariantProvider>
+      <Loader />
       <AnimatePresence>
-        <Router>
+          <Router>
           <Navbar links={navLinks} />
           <Cursor />
-
           <ToastContainer />
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                path={route.path}
-                element={route.render}
-                key={route.label}
-              />
-            ))}
-          </Routes>
-        </Router>
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  path={route.path}
+                  element={route.render}
+                  key={route.label}
+                />
+              ))}
+            </Routes>
+          </Router>
       </AnimatePresence>
     </CursorVariantProvider>
   );
