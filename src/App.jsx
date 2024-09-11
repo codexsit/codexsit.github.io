@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -16,14 +17,23 @@ const navLinks = [
 ];
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  // Function to be called when the loader finishes
+  const handleLoadComplete = () => {
+    setLoading(false); // Set loading to false once the loader is done
+  };
+
   return (
     <CursorVariantProvider>
-      <Loader />
       <AnimatePresence>
+        {loading ? (
+          <Loader onLoadComplete={handleLoadComplete} />
+        ) : (
           <Router>
-          <Navbar links={navLinks} />
-          <Cursor />
-          <ToastContainer />
+            <Navbar links={navLinks} />
+            <Cursor />
+            <ToastContainer />
             <Routes>
               {routes.map((route) => (
                 <Route
@@ -34,6 +44,7 @@ function App() {
               ))}
             </Routes>
           </Router>
+        )}
       </AnimatePresence>
     </CursorVariantProvider>
   );
