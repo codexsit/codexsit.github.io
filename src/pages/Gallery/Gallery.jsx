@@ -1,50 +1,164 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Heading from "@/components/Heading/index";
 import PageTransition from "../../components/PageTransition";
 
 const images = [
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
+  {
+    src: "/CodeX-Website/gallery/RUST SESSION/rs1.JPG",
+    caption: "Rust Session - Introduction to Rust",
+    date: "2024-01-15",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml1.jpg",
+    caption: "AI/ML Session - Getting Started with AI",
+    date: "2024-02-10",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml2.jpg",
+    caption: "AI/ML Session - Basics of Machine Learning",
+    date: "2024-02-12",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml3.jpg",
+    caption: "AI/ML Session - Basic of Deep Learning Concepts",
+    date: "2024-02-15",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml4.jpg",
+    caption: "AI/ML Session - Hands-on Workshop",
+    date: "2024-02-18",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml5.jpg",
+    caption: "AI/ML Session - Hands-on Workshop",
+    date: "2024-02-22",
+  },
+  {
+    src: "/CodeX-Website/gallery/AIML SESSION/aiml6.jpg",
+    caption: "AI/ML Session - Q&A and Networking",
+    date: "2024-02-25",
+  },
+  {
+    src: "/CodeX-Website/gallery/Community Session/cs1.jpg",
+    caption: "Community Session - Open Source Introduction",
+    date: "2024-03-01",
+  },
+  {
+    src: "/CodeX-Website/gallery/Community Session/cs2.jpg",
+    caption: "Community Session - Collaborative Development",
+    date: "2024-03-05",
+  },
+  {
+    src: "/CodeX-Website/gallery/Community Session/cs3.jpg",
+    caption: "Community Session - Hackathon Prep",
+    date: "2024-03-08",
+  },
+  {
+    src: "/CodeX-Website/gallery/Community Session/cs4.jpg",
+    caption: "Community Session - Project Showcase",
+    date: "2024-03-12",
+  },
+  {
+    src: "/CodeX-Website/gallery/Generative ai session/gas1.jpg",
+    caption: "Generative AI Session - AI Art",
+    date: "2024-04-02",
+  },
+  {
+    src: "/CodeX-Website/gallery/Generative ai session/gas2.jpg",
+    caption: "Generative AI Session - Text Generation with AI",
+    date: "2024-04-05",
+  },
+  {
+    src: "/CodeX-Website/gallery/Generative ai session/gas3.jpg",
+    caption: "Generative AI Session - AI for Text",
+    date: "2024-04-08",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll4.jpg",
+    caption: "Laser Lock Session - Laser Team Group Pic",
+    date: "2024-05-01",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll5.jpg",
+    caption: "Laser Lock Session - Laser Safety Protocols",
+    date: "2024-05-03",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll6.jpg",
+    caption: "Laser Lock Session - Hands-on Demonstration",
+    date: "2024-05-06",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll7.jpg",
+    caption: "Laser Lock Session - Opening Ceremony ",
+    date: "2024-05-09",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll8.jpg",
+    caption: "Laser Lock Session - Setup for Lacer Lock",
+    date: "2024-05-11",
+  },
+  {
+    src: "/CodeX-Website/gallery/Laser Lock/ll9.jpg",
+    caption: "Laser Lock Session - Closing Ceremony",
+    date: "2024-05-14",
+  },
 ];
+
 
 export default function Gallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
+  // Function to open the modal and set the selected image index
   const openModal = (index = 0) => {
     setSelectedImageIndex(index);
     setModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
 
+  // Function to navigate to the previous image
   const goToPrevious = () => {
     setSelectedImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
+  // Function to navigate to the next image
   const goToNext = () => {
     setSelectedImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Function to handle keydown events for modal navigation
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       closeModal();
+    } else if (event.key === "ArrowLeft") {
+      goToPrevious();
+    } else if (event.key === "ArrowRight") {
+      goToNext();
     }
-    // You can add more key handlers here as needed
   };
+
+  // Add event listener for keydown events when modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [modalOpen]);
 
   return (
     <PageTransition>
@@ -58,29 +172,33 @@ export default function Gallery() {
             role="button"
             aria-label="Open"
             onClick={() => openModal(index)}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            tabIndex={0}
-            key={image}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                openModal(index);
+              }
+            }}
+            tabIndex={0} // Makes the div focusable
+            key={image.src}
             className="cursor-pointer"
           >
             <img
               className="h-auto max-w-full rounded-lg aspect-square"
-              src={image}
+              src={image.src}
               alt={`Gallery img ${index + 1}`}
             />
           </div>
         ))}
 
         {modalOpen ? (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-            <div className="relative">
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 overflow-y-auto">
+            <div className="relative max-h-screen max-w-screen-lg p-4 bg-white rounded-lg">
               <button
                 type="button"
                 className="absolute top-0 right-0 m-4 text-white bg-gray-500 hover:bg-gray-700 font-bold py-2 px-4 border border-gray-700 rounded"
                 onClick={closeModal}
                 aria-label="Close"
               >
-                <i className="fa-solid fa-xmark" />
+                x
               </button>
               <button
                 className="absolute left-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl ml-5"
@@ -88,7 +206,7 @@ export default function Gallery() {
                 aria-label="Previous Image"
                 type="button"
               >
-                <i className="fa-solid fa-backward" />
+                &lt;&lt;
               </button>
               <button
                 className="absolute right-0 top-1/2 transform -translate-y-1/2 text-black font-bold py-2 px-4 border border-black rounded-3xl mr-5"
@@ -96,18 +214,24 @@ export default function Gallery() {
                 aria-label="Next Image"
                 type="button"
               >
-                <i className="fa-solid fa-forward" />
+                &gt;&gt;
               </button>
               <img
-                className="max-w-full rounded-lg"
-                src={images[selectedImageIndex]}
+                className="max-h-[80vh] max-w-[80vw] rounded-lg mb-4"
+                src={images[selectedImageIndex].src}
                 alt={`Selected gallery img ${selectedImageIndex + 1}`}
               />
+              <div className="text-center max-w-[80vw]">
+                <h3 className="text-lg font-semibold truncate">
+                  {images[selectedImageIndex].caption}
+                </h3>
+                <p className="text-sm text-gray-500">
+                  Date: {images[selectedImageIndex].date}
+                </p>
+              </div>
             </div>
           </div>
-        ) : (
-          <div> </div>
-        )}
+        ) : null}
       </div>
     </PageTransition>
   );
