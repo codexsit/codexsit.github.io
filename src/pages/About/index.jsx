@@ -1,7 +1,5 @@
 // import React from "react";
 import Heading from "@/components/Heading/index";
-import Stock1 from "@/assets/images/About/stockimage1.svg";
-import Stock3 from "@/assets/images/About/stockimage3.svg";
 import Oval from "@/assets/images/About/oval.svg";
 import PageTransition from "../../components/PageTransition";
 
@@ -26,12 +24,12 @@ function About() {
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4">
               <img
-                src={Stock1}
+                src="/CodeX-Website/gallery/Laser Lock/ll4.jpg"
                 alt="About Us 1"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
               <img
-                src={Stock3}
+                src="/CodeX-Website/gallery/Laser Lock/ll5.jpg"
                 alt="About Us 2"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
@@ -94,12 +92,12 @@ function About() {
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-8">
               <img
-                src={Stock1}
+                src="/CodeX-Website/gallery/Community Session/cs4.jpg"
                 alt="What We Do 1"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
               />
               <img
-                src={Stock3}
+                src="/CodeX-Website/gallery/AIML SESSION/aiml2.jpg"
                 alt="What We Do 2"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
               />
