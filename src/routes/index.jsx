@@ -12,7 +12,7 @@ const routes = [
     label: "AboutUs",
     path: "/about-us-test",
     requireAuth: false,
-    render: <AboutSection />
+    render: <AboutSection />,
   },
   {
     label: "Loader",
