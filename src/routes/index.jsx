@@ -5,8 +5,15 @@ import Gallery from "@/pages/Gallery/Gallery";
 import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
+import AboutSection from "@/components/AboutUs";
 
 const routes = [
+  {
+    label: "AboutUs",
+    path: "/about-us-test",
+    requireAuth: false,
+    render: <AboutSection />
+  },
   {
     label: "Loader",
     path: "/loader",
