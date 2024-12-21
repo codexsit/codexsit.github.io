@@ -1,5 +1,7 @@
 // import React from "react";
 import Heading from "@/components/Heading/index";
+import Stock1 from "@/assets/images/About/stockimage1.svg";
+import Stock3 from "@/assets/images/About/stockimage3.svg";
 import Oval from "@/assets/images/About/oval.svg";
 import PageTransition from "../../components/PageTransition";
 
@@ -8,7 +10,7 @@ function About() {
     <PageTransition>
       <div className="flex flex-col min-h-screen">
         {/* About Us Section */}
-        <section className="bg-secondary-dark text-text-light py-8 px-4 md:px-8">
+        <section className="bg-secondary-dark text-text-light py-12 px-4 md:px-8">
           <Heading
             text="ABOUT US"
             className="mb-8"
@@ -24,12 +26,12 @@ function About() {
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4">
               <img
-                src="/CodeX-Website/gallery/Laser Lock/ll4.jpg"
+                src={Stock1}
                 alt="About Us 1"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
               <img
-                src="/CodeX-Website/gallery/Laser Lock/ll5.jpg"
+                src={Stock3}
                 alt="About Us 2"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
@@ -92,12 +94,12 @@ function About() {
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-8">
               <img
-                src="/CodeX-Website/gallery/Community Session/cs4.jpg"
+                src={Stock1}
                 alt="What We Do 1"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
               />
               <img
-                src="/CodeX-Website/gallery/AIML SESSION/aiml2.jpg"
+                src={Stock3}
                 alt="What We Do 2"
                 className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
               />
