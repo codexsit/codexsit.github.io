@@ -1,19 +1,26 @@
+import { Link } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import Card from "@/components/Card";
 
 export default function AboutSection() {
   const images1 = [
-    { src: "/placeholder.svg?height=250&width=250", id: "image1-1" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image1-2" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image1-3" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image1-4" },
+    { src: "src/assets/images/AIML_SESSION/Copy of IMG_20231014_101836310.jpg", id: "image1-1" },
+    { src: "src/assets/images/Community_Session/Copy of 20240224_103259AMByGPSMapCamera.jpg", id: "image1-2" },
+    { src: "src/assets/images/Gen_AI_Session/Copy of 20240203_21709PMByGPSMapCamera.jpg", id: "image1-3" },
+    { src: "src/assets/images/HackTober_Fest/Copy of file_2023-09-30_08.20.07.png", id: "image1-4" },
+    { src: "src/assets/images/Laser_Lock/Copy of Copy of IMG_20230920_124854067.jpg", id: "image1-5" },
+    { src: "src/assets/images/RUST_SESSION/Copy of IMG_1808.JPG", id: "image1-6" },
+    { src: "src/assets/images/AIML_SESSION/Copy of 20231014_101538AMByGPSMapCamera.jpg", id: "image1-7" },
   ];
 
   const images2 = [
-    { src: "/placeholder.svg?height=250&width=250", id: "image2-1" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image2-2" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image2-3" },
-    { src: "/placeholder.svg?height=250&width=250", id: "image2-4" },
+    { src: "src/assets/images/Community_Session/Copy of 20240224_104111amByGPSMapCamera.jpg", id: "image2-1" },
+    { src: "src/assets/images/Gen_AI_Session/Copy of 20240203_25946PMByGPSMapCamera.jpg", id: "image2-2" },
+    { src: "src/assets/images/HackTober_Fest/Copy of Technology in Education Technology Presentation in Blue Peach Illustrative Style (LinkedIn Post)-03.jpeg", id: "image2-3" },
+    { src: "src/assets/images/Laser_Lock/Copy of IMG_0579~2.jpg", id: "image2-4" },
+    { src: "src/assets/images/HackTober_Fest/Copy of file_2023-09-30_08.20.27.png", id: "image2-5" },
+    { src: "src/assets/images/AIML_SESSION/Copy of IMG_20231014_102758812.jpg", id: "image2-6" },
+    { src: "src/assets/images/Laser_Lock/Copy of IMG_20230920_150650428.jpg", id: "image2-7" },
   ];
 
   return (
@@ -50,12 +57,14 @@ export default function AboutSection() {
                 expertise through a variety of activities and events.
               </span>
             </p>
+            <Link to="/about-us">
             <button
               type="button"
               className="absolute -bottom-6 right-0 text-xl underline text-text-aboutuslight hover:text-text-light transition-colors"
             >
               Know More
             </button>
+            </Link>
           </div>
         </div>
       </section>
