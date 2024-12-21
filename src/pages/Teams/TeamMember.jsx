@@ -3,10 +3,27 @@ import { Link } from "react-router-dom";
 import LinkedInIcon from "@/assets/images/Teams/linkedin.svg";
 import GithubIcon from "@/assets/images/Teams/github.svg";
 import InstagramIcon from "@/assets/images/Teams/instagram.svg";
+import SakshamGuptaImage from "@/assets/images/Core/SakshamGupta.jpg";
+import RupaliGangardeImage from "@/assets/images/Core/RupaliGangarde.jpg";
+import SehajSalujaImage from "@/assets/images/Core/SehajSaluja.jpg";
+import PramitSharmaImage from "@/assets/images/Core/PramitSharma.jpg";
+import ShraddhaBhaskarImage from "@/assets/images/Core/ShraddhaBhaskar.jpg";
+import GarretFernandesImage from "@/assets/images/Core/GarretFernandes.jpg";
+import BoscoChanamImage from "@/assets/images/Core/BoscoChanam.jpg";
+
+const images = {
+  1: SakshamGuptaImage,
+  2: RupaliGangardeImage,
+  3: SehajSalujaImage,
+  4: PramitSharmaImage,
+  5: ShraddhaBhaskarImage,
+  6: GarretFernandesImage,
+  7: BoscoChanamImage,
+};
 
 function TeamMember({ member }) {
-  const { name, position, image, description, linkedin, instagram, github } =
-    member;
+  const { name, position, description, linkedin, instagram, github, id } = member;
+  const image = images[id];
 
   return (
     <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-200 hover:drop-shadow-2xl drop-shadow-background cursor-pointer bg-gradient-to-br from-gradient-light to-gradient-dark rounded-3xl shadow-2xl shadow-background overflow-hidden p-2 align-middle max-w-[350px]">
@@ -14,7 +31,7 @@ function TeamMember({ member }) {
         <img
           src={image}
           alt={name}
-          className="w-32 h-32 rounded-full mx-auto"
+          className="w-32 h-32 rounded-full mx-auto object-cover"
         />
         <h2 className="text-xl mt-8 font-poppins font-thin text-center tracking-wide text-text-light">
           {name}
@@ -60,11 +77,11 @@ TeamMember.propTypes = {
   member: PropTypes.shape({
     name: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     linkedin: PropTypes.string.isRequired,
     instagram: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };
 
