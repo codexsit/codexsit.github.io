@@ -2,6 +2,8 @@ import { useContext } from "react";
 import Heading from "@/components/Heading";
 import { CursorVariantContext } from "@/context/CursorVariantProvider";
 import PageTransition from "@/components/PageTransition";
+import EventsHighlight from "../../components/EventsHighlight";
+import SkewButton from "../../components/SkewButton";
 
 function Home() {
   const { setCursorVariantText, setCursorVariantDefault } =
@@ -24,6 +26,10 @@ function Home() {
         </div>
       </div>
       <Heading text="What do we do?" />
+      <EventsHighlight />
+      <div className="h-[50vh] mt-[50vh">
+        <SkewButton link="/events" text="See all events" />
+      </div>
     </PageTransition>
   );
 }
