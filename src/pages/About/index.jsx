@@ -1,12 +1,37 @@
-// import React from "react";
+import { useEffect, useState, useRef } from "react";
 import Heading from "@/components/Heading/index";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Oval from "@/assets/images/About/oval.svg";
 import PageTransition from "../../components/PageTransition";
+import "./About.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+  const sectionRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(0); // 0: Vision, 1: Mission
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the current scroll position
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate which section should be active
+      const newActiveSection = Math.floor(scrollPosition / viewportHeight);
+
+      setActiveSection(newActiveSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <PageTransition>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col">
         {/* About Us Section */}
         <section className="bg-secondary-dark text-text-light py-8 px-4 md:px-8">
           <Heading
@@ -37,46 +62,56 @@ function About() {
           </div>
         </section>
 
-        {/* Our Vision Section */}
-        <section className="bg-background-light text-text-dark py-12 px-4 md:px-8 relative">
-          <Heading
-            text="OUR VISION"
-            className="mb-8"
-            frontTextStyle="text-primary"
-          />
-          <div className="max-w-4xl mx-auto">
-            <p className="text-center text-base md:text-lg mb-8">
-              To be a leading coding club that inspires students, driving
-              excellence in programming and technology at Symbiosis Institute of
-              Technology and beyond.
-            </p>
+        <div
+          ref={sectionRef}
+          className="h-[100vh] relative bg-background-light text-text-dark"
+        >
+          {/* Vision Section */}
+          <div
+            className={`transition-section ${activeSection === 0 ? "visible" : ""}`}
+          >
+            <Heading
+              text="OUR VISION"
+              className="mb-8"
+              frontTextStyle="text-primary"
+            />
+            <div className="max-w-4xl mx-auto">
+              <p className="text-center text-base md:text-lg mb-8">
+                To be a leading coding club that inspires students, driving
+                excellence in programming and technology at Symbiosis Institute
+                of Technology and beyond.
+              </p>
+            </div>
           </div>
-        </section>
 
-        {/* Our Mission Section */}
-        <section className="bg-background-light text-text-dark py-12 px-4 md:px-8 relative">
-          <Heading
-            text="OUR MISSION"
-            className="mb-8"
-            frontTextStyle="text-primary"
-          />
-          <div className="max-w-4xl mx-auto relative z-10">
-            <p className="text-center text-base md:text-lg mb-8">
-              To empower students (from beginner coders to advanced) with coding
-              skills and knowledge through hands-on learning experiences,
-              webinars and workshops fostering a community of innovative
-              thinkers and problem-solvers.
-            </p>
+          {/* Mission Section */}
+          <div
+            className={`transition-section ${activeSection === 1 ? "visible" : ""}`}
+          >
+            <Heading
+              text="OUR MISSION"
+              className="mb-8"
+              frontTextStyle="text-primary"
+            />
+            <div className="max-w-4xl mx-auto">
+              <p className="text-center text-base md:text-lg mb-8">
+                To empower students (from beginner coders to advanced) with
+                coding skills and knowledge through hands-on learning
+                experiences, webinars and workshops fostering a community of
+                innovative thinkers and problem-solvers.
+              </p>
+            </div>
           </div>
+
           <img
             src={Oval}
             alt="Oval"
             className="w-full absolute bottom-0 left-0 z-0"
           />
-        </section>
+        </div>
 
         {/* What We Do Section */}
-        <section className="bg-secondary-dark text-text-light py-12 px-4 md:px-8 relative">
+        <section className="min-h-screen bg-secondary-dark text-text-light py-12 px-4 md:px-8 relative">
           <Heading
             text="WHAT WE DO?"
             className="mb-8"
