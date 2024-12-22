@@ -23,9 +23,6 @@ export default {
         text: {
           light: "#F7F7F7",
           dark: "#232323",
-          aboutuslight: "#B7AB98",
-          aboutusdark: "#595959",
-          aboutusorange: "#E76941"
         },
         gradient: {
           light: "#383838",

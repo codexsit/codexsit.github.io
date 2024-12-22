@@ -1,6 +1,11 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import Card from "@/components/Card";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const images1 = [
@@ -79,12 +84,85 @@ export default function AboutSection() {
     },
   ];
 
+  const paragraphRef = useRef(null);
+
+  useEffect(() => {
+    const paragraph = paragraphRef.current;
+
+    const originalSpan = paragraph.querySelector(".text-primary");
+    const highlightedText = originalSpan.textContent;
+
+    // Split all text nodes while preserving the special span
+    const splitText = (node) => {
+      if (node.nodeType === 3) {
+        // Text node
+        const letters = node.textContent.split("");
+        const fragments = letters.map((letter) => {
+          const span = document.createElement("span");
+          span.className = "inline-block letter-span";
+          span.innerHTML = letter === " " ? "&nbsp;" : letter;
+          return span;
+        });
+        node.replaceWith(...fragments);
+      } else if (node.classList?.contains("text-primary")) {
+        // For highlighted text, split but add special class
+        const letters = node.textContent.split("");
+        const fragments = letters.map((letter) => {
+          const span = document.createElement("span");
+          span.className = "inline-block letter-span highlighted";
+          span.innerHTML = letter === " " ? "&nbsp;" : letter;
+          return span;
+        });
+        node.replaceWith(...fragments);
+      } else {
+        [...node.childNodes].forEach((child) => splitText(child));
+      }
+    };
+
+    // Clone the paragraph to preserve original structure
+    const clone = paragraph.cloneNode(true);
+    splitText(clone);
+    paragraph.innerHTML = clone.innerHTML;
+
+    // Create a timeline for synchronized animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: paragraph,
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+      },
+    });
+
+    // Animate regular text
+    tl.fromTo(
+      paragraph.querySelectorAll(".letter-span:not(.highlighted)"),
+      { color: "#595959" },
+      {
+        color: "#B7AB98",
+        stagger: 0.02,
+      },
+      0, // Start at the beginning of the timeline
+    );
+
+    // Animate highlighted text
+    tl.fromTo(
+      paragraph.querySelectorAll(".highlighted"),
+      { color: "#595959" },
+      {
+        color: "#E76941",
+        stagger: 0.02,
+      },
+      0, // Start at the same time as regular text
+    );
+  }, []);
+
   return (
     <>
-      <section className="relative min-h-fit bg-secondary-dark text-white py-12 px-4 md:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-fit bg-background-dark text-white py-12 md:px-6 lg:px-12 overflow-hidden">
         <div className="absolute top-4 -left-1 w-8 h-8 bg-white rounded-full opacity-100" />
         <div className="absolute -top-2 right-20 w-20 h-20 bg-primary-dark rounded-full opacity-100 z-10" />
-        <div className="max-w-full mx-auto px-12 relative z-20">
+        <div className="max-w-full mx-auto relative z-20">
           <h1
             className="text-secondary-dark shadow-black font-poppins font-extrabold text-4xl md:text-6xl lg:text-8xl mb-12 relative z-20"
             style={{
@@ -95,28 +173,23 @@ export default function AboutSection() {
           </h1>
 
           <div className="mb-16 max-w-full relative">
-            <p className="text-xl md:text-3xl font-poppins font-bold leading-relaxed">
-              <span className="text-text-aboutuslight">
-                Codex is the coding club at{" "}
-              </span>
-              <span className="text-text-aboutusorange">
+            <p
+              ref={paragraphRef}
+              className="text-xl md:text-4xl md:leading-snug font-poppins font-semibold"
+            >
+              Codex is the coding club at{" "}
+              <span className="text-primary">
                 Symbiosis Institute of Technology
-              </span>
-              <span className="text-text-aboutuslight">
-                {" "}
-                that brings together students passionate about technology and
-                programming. Our club is committed to creating an engaging
-                environment{" "}
-              </span>
-              <span className="text-text-aboutusdark">
-                where members can learn, collaborate, and grow their coding
-                expertise through a variety of activities and events.
-              </span>
+              </span>{" "}
+              that brings together students passionate about technology and
+              programming. Our club is committed to creating an engaging
+              environment where members can learn, collaborate, and grow their
+              coding expertise through a variety of activities and events.
             </p>
             <Link to="/about-us">
               <button
                 type="button"
-                className="absolute -bottom-6 right-0 text-xl underline text-text-aboutuslight hover:text-text-light transition-colors"
+                className="absolute -bottom-6 right-0 text-xl underline text-primary hover:text-text-light transition-colors"
               >
                 Know More
               </button>
