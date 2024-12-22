@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar/index";
 import Cursor from "./components/Cursor";
 import CursorVariantProvider from "@/context/CursorVariantProvider";
 import Loader from "@/components/Loader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const navLinks = [
   { name: "About Us", path: "/about-us" },
@@ -34,6 +35,7 @@ function App() {
             <Navbar links={navLinks} />
             <Cursor />
             <ToastContainer />
+            <ScrollToTop />
             <Routes>
               {routes.map((route) => (
                 <Route

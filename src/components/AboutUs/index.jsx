@@ -84,7 +84,7 @@ export default function AboutSection() {
       <section className="relative min-h-fit bg-secondary-dark text-white py-12 px-4 md:px-6 lg:px-8 overflow-hidden">
         <div className="absolute top-4 -left-1 w-8 h-8 bg-white rounded-full opacity-100" />
         <div className="absolute -top-2 right-20 w-20 h-20 bg-primary-dark rounded-full opacity-100 z-10" />
-        <div className="max-w-full mx-auto px-24 relative z-20">
+        <div className="max-w-full mx-auto px-12 relative z-20">
           <h1
             className="text-secondary-dark shadow-black font-poppins font-extrabold text-4xl md:text-6xl lg:text-8xl mb-12 relative z-20"
             style={{
