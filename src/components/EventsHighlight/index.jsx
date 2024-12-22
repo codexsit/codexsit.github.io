@@ -2,36 +2,42 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const EventsHighlight = () => {
+function EventsHighlight() {
   const containerRef = useRef(null);
 
   const images = [
     {
+      key: 0,
       url: "/CodeX-Website/gallery/Community Session/cs1.jpg",
       alt: "Image 1",
       side: "left",
     },
     {
+      key: 1,
       url: "/CodeX-Website/gallery/AIML SESSION/aiml1.jpg",
       alt: "Image 2",
       side: "right",
     },
     {
+      key: 2,
       url: "/CodeX-Website/gallery//AIML SESSION/aiml6.jpg",
       alt: "Image 3",
       side: "left",
     },
     {
+      key: 3,
       url: "/CodeX-Website/gallery/Community Session/cs3.jpg",
       alt: "Image 4",
       side: "right",
     },
     {
+      key: 4,
       url: "/CodeX-Website/gallery/HackTober Fest/htf1_1.jpg",
       alt: "Image 5",
       side: "left",
     },
     {
+      key: 5,
       url: "/CodeX-Website/gallery/Laser Lock/ll1.jpg",
       alt: "Image 6",
       side: "right",
@@ -82,9 +88,9 @@ const EventsHighlight = () => {
 
       {/* Images container */}
       <div ref={containerRef} className="relative">
-        {images.map((image, index) => (
+        {images.map((image) => (
           <div
-            key={index}
+            key={image.key}
             className={`relative h-[50vh] flex items-center justify-center ${
               image.side === "left" ? "ml-24" : "mr-24"
             }`}
@@ -105,6 +111,6 @@ const EventsHighlight = () => {
       </div>
     </div>
   );
-};
+}
 
 export default EventsHighlight;
