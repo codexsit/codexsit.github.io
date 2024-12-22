@@ -1,38 +1,64 @@
 [
     {
-      "name": "Aditya Desai",
+      "name": "Saksham Gupta",
       "position": "PRESIDENT",
-      "image": "/CodeX-Website/images/teams/Aditya-Desai.jpeg",
-      "description": "Praesent vestibulum libero non diam Praesent vestibulum libero non diam",
-      "linkedin": "https://linkedin.com/in/john-doe",
-      "instagram": "https://instagram.com/john_doe",
-      "github": "https://github.com/john-doe"
+      "description": "\"As president, I work to get the best out of my team, stay open to different ideas, and create a strong coding culture in our college.\"",
+      "linkedin": "https://www.linkedin.com/in/sakshamgupta912/",
+      "instagram": "https://instagram.com/sakshamgupta__",
+      "github": "https://github.com/sakshamgupta912",
+      "id": 1
     },
     {
       "name": "Dr. Rupali Gangarde",
       "position": "FACULTY ADVISOR",
-      "image": "https://media-pnq1-2.cdn.whatsapp.net/v/t61.24694-24/362246050_985287035952930_3222687059276313181_n.jpg?ccb=11-4&oh=01_AdQzhJX4u0dIpMxNBjPYbrW4sfwKKQ4xbLc3kW69swB3Wg&oe=65EA2552&_nc_sid=e6ed6c&_nc_cat=106",
-      "description": "Praesent vestibulum libero non diam Praesent vestibulum libero non diam",
-      "linkedin": "https://linkedin.com/in/jane-doe",
-      "instagram": "https://instagram.com/jane_doe",
-      "github": "https://github.com/jane-doe"
+      "description": "\"As the guiding light of Codex Club, I provide mentorship, share insights from my experience, and help our team excel in fostering innovation and collaboration.\"",
+      "linkedin": "https://www.linkedin.com/in/dr-rupali-gangarde-33aa79121/",
+      "instagram": "https://instagram.com/rupali.gangarde",
+      "github": "https://github.com/",
+      "id": 2
     },
     {
-      "name": "Saksham Gupta",
+      "name": "Sehaj Saluja",
       "position": "VICE-PRESIDENT",
-      "image": "/CodeX-Website/images/teams/Saksham-Gupta.jpeg",
-      "description": "Praesent vestibulum libero non diam Praesent vestibulum libero non diam",
-      "linkedin": "https://linkedin.com/in/john-doe",
-      "instagram": "https://instagram.com/john_doe",
-      "github": "https://github.com/john-doe"
+      "description": "\"As the vice-president, I assist in strategic planning, lead initiatives to strengthen our club's vision, and create opportunities for members to thrive.\"",
+      "linkedin": "https://linkedin.com/in/sehaj-saluja/",
+      "instagram": "https://instagram.com/sehajsalujaaa",
+      "github": "https://github.com/sehajsaluja17",
+      "id": 3
     },
     {
-      "name": "Saksham Gupta",
-      "position": "VICE-PRESIDENT",
-      "image": "/CodeX-Website/images/teams/Saksham-Gupta.jpeg",
-      "description": "Praesent vestibulum libero non diam Praesent vestibulum libero non diam",
-      "linkedin": "https://linkedin.com/in/john-doe",
-      "instagram": "https://instagram.com/john_doe",
-      "github": "https://github.com/john-doe"
+      "name": "Pramit Sharma",
+      "position": "TECHNICAL HEAD",
+      "description": "\"As the technical head, I lead our coding initiatives, mentor members in honing their skills, and drive innovation through impactful projects.\"",
+      "linkedin": "https://linkedin.com/in/pramit-sharma/",
+      "instagram": "https://instagram.com/pramit.sharma",
+      "github": "https://github.com/MatricalDefunkt",
+      "id": 4
+    },
+    {
+      "name": "Shraddha Bhaskar",
+      "position": "EVENTS HEAD",
+      "description": "\"As the events head, I plan and organize engaging activities, foster collaboration among members, and bring our club’s vision to life.\"",
+      "linkedin": "https://linkedin.com/in/shraddha-bhaskar-77a280254/",
+      "instagram": "https://instagram.com/shraddha.836",
+      "github": "https://github.com/11sb03",
+      "id": 5
+    },{
+      "name": "Garret Fernandes",
+      "position": "MEDIA HEAD",
+      "description": "\"As the media head, I work to highlight our team's achievements, expand our media outreach, and foster a thriving tech community.\"",
+      "linkedin": "https://linkedin.com/in/garret-fernandez-148809249/",
+      "instagram": "https://instagram.com/garretfernandezz",
+      "github": "https://github.com/garretfernandezz",
+      "id": 6
+    },
+    {
+      "name": "Bosco Chanam",
+      "position": "TECHNICAL ADVISOR",
+      "description": "\"As a technical advisor, I aid the technical team with enlightening our members with new skills and technologies.\"",
+      "linkedin": "https://linkedin.com/in/boscochanam/",
+      "instagram": "https://instagram.com/boscochanam",
+      "github": "https://github.com/boscochanam",
+      "id": 7
     }
   ]

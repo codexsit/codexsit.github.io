@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import Heading from "@/components/Heading";
 import { CursorVariantContext } from "@/context/CursorVariantProvider";
 import PageTransition from "@/components/PageTransition";
+import AboutSection from "@/components/AboutUs";
 
 function Home() {
   const { setCursorVariantText, setCursorVariantDefault } =
@@ -23,7 +23,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <Heading text="What do we do?" />
+      <AboutSection />
     </PageTransition>
   );
 }
