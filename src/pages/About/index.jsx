@@ -1,129 +1,109 @@
+// import React from "react";
 import Heading from "@/components/Heading/index";
-import Stock1 from "@/assets/images/About/stockimage1.svg";
-import Stock3 from "@/assets/images/About/stockimage3.svg";
-import Stock4 from "@/assets/images/About/stockimage4.svg";
 import Oval from "@/assets/images/About/oval.svg";
 import PageTransition from "../../components/PageTransition";
 
 function About() {
   return (
     <PageTransition>
-      <div className="min-h-screen">
-        <Heading
-          text="ABOUT US"
-          className="my-6"
-          frontTextStyle="text-text-light"
-        />
-        <div className="flex flex-grow flex-wrap items-center overflow-hidden">
-          <div className="container space-y-8">
-            <p className="p-2 px-64 mx-auto m-w-12 text-xl text-wrap text-text-light text-center mt-6 space-y-16">
-              Praesent vestibulum libero non diam consequat euismod. Maecenas
-              purus sapien, mollis ut dapibus et, varius in ipsum. Morbi mollis
-              varius tincidunt. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
-            </p>
-            <img
-              src={Stock1}
-              alt="Stock1"
-              className="m-h-12 m-w-12 mx-auto space-y-8 rounded-2xl"
-            />
-          </div>
-        </div>
-        <Heading
-          text="OUR MISSION"
-          className="my-12"
-          frontTextStyle="text-text-light"
-        />
-        <div className="flex flex-grow flex-wrap items-center relative">
-          <div className="container space-y-8">
-            <p className="p-2 px-64 mx-auto m-w-12 text-xl text-wrap text-text-light text-center mt-6 space-y-16">
-              Praesent vestibulum libero non diam consequat euismod. Maecenas
-              purus sapien, mollis ut dapibus et, varius in ipsum. Morbi mollis
-              varius tincidunt. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
-            </p>
-            <div className="w-48 h-24 rounded-tl-full rounded-tr-full bg-background-light absolute -bottom-15 right-20">
-              {}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="bg-background-light min-h-screen relative">
-        <div className="w-48 h-24 rounded-bl-full rounded-br-full bg-primary absolute bottom-15 right-20">
-          {}
-        </div>
-        <Heading
-          text="OUR VISION"
-          className="mt-32"
-          frontTextStyle="text-primary"
-        />
-        <div className="container space-y-8">
-          <p className="p-2 px-64 py-32 space-y-16 mx-auto m-w-12 text-xl text-wrap text-text-dark text-center mt-6">
-            Praesent vestibulum libero non diam consequat euismod. Maecenas
-            purus sapien, mollis ut dapibus et, varius in ipsum. Morbi mollis
-            varius tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit.
-          </p>
-        </div>
-        <div className="width-full">
-          <img src={Oval} alt="Oval" className="absolute bottom-0" />
-        </div>
-      </div>
-      <div className="min-h-screen overflow-hidden">
-        <div className="items-center relative">
+      <div className="flex flex-col min-h-screen">
+        {/* About Us Section */}
+        <section className="bg-secondary-dark text-text-light py-8 px-4 md:px-8">
           <Heading
-            text="WHAT WE DO?"
-            className="mt-40 space-y-16"
+            text="ABOUT US"
+            className="mb-8"
             frontTextStyle="text-text-light"
           />
-          <div className="w-20 h-20 rounded-full bg-primary absolute -top-10 right-10">
-            {}
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center relative">
-          <div className="space-y-8">
-            <p className="p-2 px-64 mx-auto m-w-12 text-xl text-wrap text-text-light text-center mt-6 space-y-6">
-              Praesent vestibulum libero non diam consequat euismod. Maecenas
-              purus sapien, mollis ut dapibus et, varius in ipsum. Morbi mollis
-              varius tincidunt. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-base md:text-lg mb-8">
+              Codex is the coding club at Symbiosis Institute of Technology that
+              brings together students passionate about technology and
+              programming. Our club is committed to creating an engaging
+              environment where members can learn, collaborate, and grow their
+              coding expertise through a variety of activities and events
             </p>
-            <div className="w-12 h-12 rounded-full bg-background-light absolute top-2 left-10">
-              {}
-            </div>
-            <div className="flex flex-row items-center flex-grow px-64 py-8">
+            <div className="flex flex-col md:flex-row justify-center gap-4">
               <img
-                src={Stock1}
-                alt="Stock1"
-                className="h-96 w-96 object-none mx-auto"
+                src="/CodeX-Website/gallery/Laser Lock/ll4.jpg"
+                alt="About Us 1"
+                className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
-              <div className="w-24 h-24 rounded-full bg-background-light absolute top-60 right-48">
-                {}
-              </div>
               <img
-                src={Stock3}
-                alt="Stock3"
-                className="h-96 w-96 mx-auto z-0"
+                src="/CodeX-Website/gallery/Laser Lock/ll5.jpg"
+                alt="About Us 2"
+                className="w-full md:w-1/2 max-w-md mx-auto rounded-2xl h-auto object-cover"
               />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="min-h-fit my-48 px-8">
-        <div className="flex flex-row">
-          <img src={Stock4} alt="Stock4" className="max-h-96 max-w-96" />
-          <div className="flex flex-wrap px-12 mt-12">
-            <p className="text-5xl text-text-light font-bold max-w-screen font-poppins">
-              OUR VISION
-            </p>
-            <p className="mx-auto max-w-screen text-xl text-wrap text-text-light text-left">
-              Praesent vestibulum libero non diam consequat euismod. Maecenas
-              purus sapien, mollis ut dapibus et, varius in ipsum. Morbi mollis
-              varius tincidunt. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit.
+        </section>
+
+        {/* Our Vision Section */}
+        <section className="bg-background-light text-text-dark py-12 px-4 md:px-8 relative">
+          <Heading
+            text="OUR VISION"
+            className="mb-8"
+            frontTextStyle="text-primary"
+          />
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-base md:text-lg mb-8">
+              To be a leading coding club that inspires students, driving
+              excellence in programming and technology at Symbiosis Institute of
+              Technology and beyond.
             </p>
           </div>
-        </div>
+        </section>
+
+        {/* Our Mission Section */}
+        <section className="bg-background-light text-text-dark py-12 px-4 md:px-8 relative">
+          <Heading
+            text="OUR MISSION"
+            className="mb-8"
+            frontTextStyle="text-primary"
+          />
+          <div className="max-w-4xl mx-auto relative z-10">
+            <p className="text-center text-base md:text-lg mb-8">
+              To empower students (from beginner coders to advanced) with coding
+              skills and knowledge through hands-on learning experiences,
+              webinars and workshops fostering a community of innovative
+              thinkers and problem-solvers.
+            </p>
+          </div>
+          <img
+            src={Oval}
+            alt="Oval"
+            className="w-full absolute bottom-0 left-0 z-0"
+          />
+        </section>
+
+        {/* What We Do Section */}
+        <section className="bg-secondary-dark text-text-light py-12 px-4 md:px-8 relative">
+          <Heading
+            text="WHAT WE DO?"
+            className="mb-8"
+            frontTextStyle="text-text-light"
+          />
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-base md:text-lg mb-12">
+              We organize coding workshops, competitions, collaborative projects
+              and webinars to help students enhance their programming abilities.
+              We also host guest lectures and webinars with industry experts to
+              provide valuable insights and career guidance. Through our
+              activities, we aim to build a supportive coding community.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center gap-8">
+              <img
+                src="/CodeX-Website/gallery/Community Session/cs4.jpg"
+                alt="What We Do 1"
+                className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
+              />
+              <img
+                src="/CodeX-Website/gallery/AIML SESSION/aiml2.jpg"
+                alt="What We Do 2"
+                className="w-full md:w-1/2 max-w-md mx-auto rounded-lg h-auto object-cover"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </PageTransition>
   );
