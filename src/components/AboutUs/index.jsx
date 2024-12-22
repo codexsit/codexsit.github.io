@@ -5,63 +5,77 @@ import Card from "@/components/Card";
 export default function AboutSection() {
   const images1 = [
     {
-      src: "src/assets/images/AIML_SESSION/Copy of IMG_20231014_101836310.jpg",
-      id: "image1-1",
+      src: "/CodeX-Website/gallery/AIML SESSION/aiml6.jpg",
+      alt: "AIML Session",
+      key: 0,
     },
     {
-      src: "src/assets/images/Community_Session/Copy of 20240224_103259AMByGPSMapCamera.jpg",
-      id: "image1-2",
+      src: "/CodeX-Website/gallery/Community Session/cs1.jpg",
+      alt: "Community Session",
+      key: 1,
     },
     {
-      src: "src/assets/images/Gen_AI_Session/Copy of 20240203_21709PMByGPSMapCamera.jpg",
-      id: "image1-3",
+      src: "/CodeX-Website/gallery/Generative ai session/gas3.jpg",
+      alt: "Generative AI Session",
+      key: 2,
     },
     {
-      src: "src/assets/images/HackTober_Fest/Copy of file_2023-09-30_08.20.07.png",
-      id: "image1-4",
+      src: "/CodeX-Website/gallery/HackTober Fest/htf2_1.jpg",
+      alt: "HackTober Fest Session",
+      key: 3,
     },
     {
-      src: "src/assets/images/Laser_Lock/Copy of Copy of IMG_20230920_124854067.jpg",
-      id: "image1-5",
+      src: "/CodeX-Website/gallery/Laser Lock/ll7.jpg",
+      alt: "Laser Lock",
+      key: 4,
     },
     {
-      src: "src/assets/images/RUST_SESSION/Copy of IMG_1808.JPG",
-      id: "image1-6",
+      src: "/CodeX-Website/gallery/RUST SESSION/rs1.JPG",
+      alt: "image1-6",
+      key: 5,
     },
     {
-      src: "src/assets/images/AIML_SESSION/Copy of 20231014_101538AMByGPSMapCamera.jpg",
-      id: "image1-7",
+      src: "/CodeX-Website/gallery/AIML SESSION/aiml5.jpg",
+      alt: "image1-7",
+      key: 6,
     },
   ];
 
   const images2 = [
     {
-      src: "src/assets/images/Community_Session/Copy of 20240224_104111amByGPSMapCamera.jpg",
-      id: "image2-1",
+      src: "/CodeX-Website/gallery/Community Session/cs2.jpg",
+      alt: "Community Session",
+      key: 0,
     },
     {
-      src: "src/assets/images/Gen_AI_Session/Copy of 20240203_25946PMByGPSMapCamera.jpg",
-      id: "image2-2",
+      src: "/CodeX-Website/gallery/Generative ai session/gas1.jpg",
+      alt: "Gen AI Session",
+      key: 1,
     },
     {
-      src: "src/assets/images/HackTober_Fest/Copy of Technology in Education Technology Presentation in Blue Peach Illustrative Style (LinkedIn Post)-03.jpeg",
-      id: "image2-3",
+      src: "/CodeX-Website/gallery/HackTober Fest/htf3_1.jpg",
+      alt: "HackTober Fest Session",
+      key: 2,
     },
     {
-      src: "src/assets/images/Laser_Lock/Copy of IMG_0579~2.jpg",
-      id: "image2-4",
+      src: "/CodeX-Website/gallery/Laser Lock/ll9.jpg",
+      alt: "Laser Lock Event",
+      key: 3,
     },
     {
-      src: "src/assets/images/HackTober_Fest/Copy of file_2023-09-30_08.20.27.png",
-      id: "image2-5",
+      src: "/CodeX-Website/gallery/HackTober Fest/htf4_1.jpg",
+      alt: "HackTober Fest Session",
+      key: 4,
     },
     {
-      src: "src/assets/images/AIML_SESSION/Copy of IMG_20231014_102758812.jpg",
-      id: "image2-6",
+      src: "/CodeX-Website/gallery/AIML SESSION/aiml2.jpg",
+      alt: "AIML Session",
+      key: 5,
     },
     {
-      src: "src/assets/images/Laser_Lock/Copy of IMG_20230920_150650428.jpg",
-      id: "image2-7",
+      src: "/CodeX-Website/gallery/AIML SESSION/aiml3.jpg",
+      alt: "AIML Session",
+      key: 6,
     },
   ];
 
@@ -120,12 +134,12 @@ export default function AboutSection() {
         >
           {images1.map((image) => (
             <Card
-              key={image.id}
+              key={image.key}
               className="mx-4 overflow-hidden bg-zinc-800 border-zinc-700"
             >
               <img
                 src={image.src}
-                alt={`Gallery ${image.id}`}
+                alt={image.alt}
                 className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] object-cover hover:scale-105 transition-transform duration-300"
               />
             </Card>
@@ -141,12 +155,12 @@ export default function AboutSection() {
         >
           {images2.map((image) => (
             <Card
-              key={image.id}
+              key={image.key}
               className="mx-4 overflow-hidden bg-zinc-800 border-zinc-700"
             >
               <img
                 src={image.src}
-                alt={`Gallery ${image.id}`}
+                alt={image.alt}
                 className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] object-cover hover:scale-105 transition-transform duration-300"
               />
             </Card>
