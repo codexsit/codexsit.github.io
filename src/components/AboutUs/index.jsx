@@ -89,28 +89,25 @@ export default function AboutSection() {
   useEffect(() => {
     const paragraph = paragraphRef.current;
 
-    const originalSpan = paragraph.querySelector(".text-primary");
-    const highlightedText = originalSpan.textContent;
-
     // Split all text nodes while preserving the special span
     const splitText = (node) => {
       if (node.nodeType === 3) {
         // Text node
-        const letters = node.textContent.split("");
-        const fragments = letters.map((letter) => {
+        const words = node.textContent.split(" ");
+        const fragments = words.map((word) => {
           const span = document.createElement("span");
           span.className = "inline-block letter-span";
-          span.innerHTML = letter === " " ? "&nbsp;" : letter;
+          span.innerHTML = `${word}&nbsp;`;
           return span;
         });
         node.replaceWith(...fragments);
       } else if (node.classList?.contains("text-primary")) {
         // For highlighted text, split but add special class
-        const letters = node.textContent.split("");
-        const fragments = letters.map((letter) => {
+        const words = node.textContent.split(" ");
+        const fragments = words.map((word) => {
           const span = document.createElement("span");
           span.className = "inline-block letter-span highlighted";
-          span.innerHTML = letter === " " ? "&nbsp;" : letter;
+          span.innerHTML = `${word}}&nbsp;`;
           return span;
         });
         node.replaceWith(...fragments);
@@ -137,7 +134,7 @@ export default function AboutSection() {
     // Animate regular text
     tl.fromTo(
       paragraph.querySelectorAll(".letter-span:not(.highlighted)"),
-      { color: "#595959" },
+      { color: "transparent" },
       {
         color: "#B7AB98",
         stagger: 0.02,
@@ -148,7 +145,7 @@ export default function AboutSection() {
     // Animate highlighted text
     tl.fromTo(
       paragraph.querySelectorAll(".highlighted"),
-      { color: "#595959" },
+      { color: "transparent" },
       {
         color: "#E76941",
         stagger: 0.02,
@@ -177,10 +174,10 @@ export default function AboutSection() {
               ref={paragraphRef}
               className="text-xl md:text-4xl md:leading-snug font-poppins font-semibold"
             >
-              Codex is the coding club at{" "}
+              Codex is the coding club at
               <span className="text-primary">
                 Symbiosis Institute of Technology
-              </span>{" "}
+              </span>
               that brings together students passionate about technology and
               programming. Our club is committed to creating an engaging
               environment where members can learn, collaborate, and grow their

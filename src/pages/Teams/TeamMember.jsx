@@ -22,7 +22,8 @@ const images = {
 };
 
 function TeamMember({ member }) {
-  const { name, position, description, linkedin, instagram, github, id } = member;
+  const { name, position, description, linkedin, instagram, github, id } =
+    member;
   const image = images[id];
 
   return (

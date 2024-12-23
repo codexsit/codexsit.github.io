@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import Heading from "@/components/Heading/index";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Oval from "@/assets/images/About/oval.svg";
 import PageTransition from "../../components/PageTransition";
+import Heading from "@/components/Heading/index";
 import "./About.css";
 
 gsap.registerPlugin(ScrollTrigger);
