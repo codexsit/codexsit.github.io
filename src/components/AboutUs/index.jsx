@@ -107,7 +107,7 @@ export default function AboutSection() {
         const fragments = words.map((word) => {
           const span = document.createElement("span");
           span.className = "inline-block letter-span highlighted";
-          span.innerHTML = `${word}}&nbsp;`;
+          span.innerHTML = `${word}&nbsp;`;
           return span;
         });
         node.replaceWith(...fragments);
