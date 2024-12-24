@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutUs";
 import TeamMember from "../Teams/TeamMember";
 import teamMembersData from "../Teams/teamsdata.json";
 import Heading from "@/components/Heading";
+import WebsiteTeam from "@/components/WebsiteTeam";
 
 function Home() {
   const { setCursorVariantText, setCursorVariantDefault } =
@@ -49,6 +50,7 @@ function Home() {
       <div className="h-[50vh]">
         <SkewButton link="/events" text="See all events" />
       </div>
+      <WebsiteTeam />
     </PageTransition>
   );
 }
