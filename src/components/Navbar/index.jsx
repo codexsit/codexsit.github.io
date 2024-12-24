@@ -19,12 +19,12 @@ function Navbar({ links }) {
 
   return (
     <nav
-      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center px-6 bg-secondary-dark`}
+      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center  pr-6  bg-secondary-dark`}
     >
       <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
         <Link
           to="/"
-          className="cursor-pointer"
+          className="cursor-pointer sm:px-0 md:px-6"
           onMouseEnter={setCursorVariantNone}
           onMouseLeave={setCursorVariantDefault}
         >
