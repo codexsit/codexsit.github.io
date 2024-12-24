@@ -39,42 +39,42 @@ function TeamMember({ member, className }) {
       className={`min-w-[330px] max-w-[330px] relative group transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-200 cursor-pointer align-middle ${className}`}
     >
       <div className="align-middle">
-        <div className="absolute top-[10%] -left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
+        <div className="absolute top-[10%] -left-4 z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
           <div className="flex flex-col space-y-4">
             <a
               href={linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-white font-sans opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+              className="text-white font-sans opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100"
             >
               <img
                 src={LinkedInIcon}
                 alt="Linkedin"
-                className="w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
+                className="w-10 h-10 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
               />
             </a>
             <a
               href={github}
               target="_blank"
               rel="noreferrer"
-              className="text-white font-sans opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+              className="text-white font-sans opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-200"
             >
               <img
                 src={GithubIcon}
                 alt="Github"
-                className="w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
+                className="w-10 h-10 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
               />
             </a>
             <a
               href={instagram}
               target="_blank"
               rel="noreferrer"
-              className="text-white font-sans opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300"
+              className="text-white font-sans opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-300"
             >
               <img
                 src={InstagramIcon}
                 alt="Instagram"
-                className="w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
+                className="w-10 h-10 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 p-2"
               />
             </a>
           </div>
