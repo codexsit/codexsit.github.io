@@ -45,8 +45,8 @@ function App() {
                   key={route.label}
                 />
               ))}
-              </Routes>
-              <Footer/>
+            </Routes>
+            <Footer />
           </Router>
         )}
       </AnimatePresence>

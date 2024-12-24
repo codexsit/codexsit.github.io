@@ -92,7 +92,7 @@ function EventsHighlight() {
           <div
             key={image.key}
             className={`relative h-[50vh] flex items-center justify-center ${
-              image.side === "left" ? "ml-24" : "mr-24"
+              image.side === "left" ? "ml-12 md:ml-24" : "mr-12 md:mr-24"
             }`}
           >
             <div
