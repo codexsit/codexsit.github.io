@@ -19,7 +19,9 @@ function About() {
       const viewportHeight = window.innerHeight;
 
       // Calculate which section should be active
-      const newActiveSection = Math.floor(scrollPosition / viewportHeight);
+      const newActiveSection = Math.floor(
+        (scrollPosition - 150) / viewportHeight,
+      );
 
       setActiveSection(newActiveSection);
     };
@@ -64,11 +66,11 @@ function About() {
 
         <div
           ref={sectionRef}
-          className="h-[100vh] relative bg-background-light text-text-dark"
+          className="h-[130vh] relative bg-background-light text-text-dark"
         >
           {/* Vision Section */}
           <div
-            className={`transition-section ${activeSection === 0 ? "visible" : ""}`}
+            className={`sticky top-1/2 mt-[50vh] transition-section ${activeSection === 0 ? "visible" : ""}`}
           >
             <Heading
               text="OUR VISION"
@@ -76,7 +78,7 @@ function About() {
               frontTextStyle="text-primary"
             />
             <div className="max-w-4xl mx-auto">
-              <p className="text-center text-base md:text-lg mb-8">
+              <p className="text-center text-base md:text-lg mb-8 px-6">
                 To be a leading coding club that inspires students, driving
                 excellence in programming and technology at Symbiosis Institute
                 of Technology and beyond.
@@ -86,7 +88,7 @@ function About() {
 
           {/* Mission Section */}
           <div
-            className={`transition-section ${activeSection === 1 ? "visible" : ""}`}
+            className={`mt-[20vh] md:mt-[10vh] transition-section ${activeSection === 1 ? "visible" : ""}`}
           >
             <Heading
               text="OUR MISSION"
@@ -94,7 +96,7 @@ function About() {
               frontTextStyle="text-primary"
             />
             <div className="max-w-4xl mx-auto">
-              <p className="text-center text-base md:text-lg mb-8">
+              <p className="text-center text-base md:text-lg mb-8 px-6">
                 To empower students (from beginner coders to advanced) with
                 coding skills and knowledge through hands-on learning
                 experiences, webinars and workshops fostering a community of
