@@ -11,10 +11,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary-dark text-text-light">
+    <footer className="min-h-screen bg-secondary-dark text-text-light flex flex-col">
       {/* Orange Banner */}
-      <div className="bg-primary py-16 sm:py-24 relative">
-        <div className="relative text-center font-black uppercase tracking-tighter my-6">
+      <div className="bg-primary relative flex justify-center items-center py-12 flex-1">
+        <div className="relative text-center font-black uppercase tracking-tighter">
           <div className="text-2xl xs:text-4xl sm:text-6xl lg:text-8xl text-outlined text-transparent">
             MADE WITH LOVE BY
           </div>
@@ -24,28 +24,28 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 text-center sm:text-left">
-          <div className="space-y-6 flex flex-col items-center justify-between sm:items-start">
+      <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-20 text-center sm:text-left">
+          <div className="space-y-6 flex flex-col justify-between items-center sm:items-start">
             <p className="text-secondary-light leading-relaxed">
               Our club is committed to creating an engaging environment where
               members can learn, collaborate, and grow their coding expertise
               through a variety of activities and events.
             </p>
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-4 md:w-full">
               <img
                 src={SitLogo}
                 alt="Symbiosis Logo"
-                className="h-10 sm:h-12"
+                className="h-10 md:h-12"
               />
               <div className="hidden sm:block w-px h-10 bg-secondary-light"></div>
-              <img src={Logo} alt="CodeX Logo" className="h-10 sm:h-12" />
+              <img src={Logo} alt="CodeX Logo" className="h-10 md:h-12" />
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 grid-cols-2 gap-8 text-center sm:text-left ">
+          <div className="flex flex-row  gap-8 text-center justify-center  sm:text-left ">
             {/* Quick Links */}
-            <div>
+            <div className="flex-1">
               <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block">
                 QUICK LINKS
                 <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
@@ -74,43 +74,44 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block ">
-                SOCIAL
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
-              </h4>
-              <ul className="space-y-2 text-text-light text-sm sm:text-base">
-                <li className="cursor-pointer">
-                  <a href="https://www.instagram.com/codex_sit/">Instagram</a>
-                </li>
-                <li className="cursor-pointer">
-                  <a href="https://www.linkedin.com/company/codex-sit-pune/">
-                    LinkedIn
-                  </a>
-                </li>
-                <li className="cursor-pointer">
-                  <a href="https://github.com/codeXsit">Github</a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Section */}
-            <div className="col-span-2 sm:col-span-1 flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="relative bottom-0 left-0 w-full">
-                <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block">
-                  CONTACT
+            <div className="flex flex-col flex-1 md:flex-[2] md:flex-row gap-4">
+              {/* Social Links */}
+              <div className="flex-1">
+                <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block ">
+                  SOCIAL
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
                 </h4>
+                <ul className="space-y-2 text-text-light text-sm sm:text-base">
+                  <li className="cursor-pointer">
+                    <a href="https://www.instagram.com/codex_sit/">Instagram</a>
+                  </li>
+                  <li className="cursor-pointer">
+                    <a href="https://www.linkedin.com/company/codex-sit-pune/">
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li className="cursor-pointer">
+                    <a href="https://github.com/codeXsit">Github</a>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-2 text-text-light text-sm sm:text-base">
-                <li>
-                  <a href="mailto:codexsit@gmail.com" className="underline">
-                    Drop us a Message
-                  </a>
-                </li>
-              </ul>
+
+              {/* Contact Section */}
+              <div className="col-span-2 sm:col-span-1 flex flex-col flex-1 items-center sm:items-start text-center sm:text-left">
+                <div className="relative bottom-0 left-0 w-full">
+                  <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block">
+                    CONTACT
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
+                  </h4>
+                </div>
+                <ul className="space-y-2 text-text-light text-sm sm:text-base">
+                  <li>
+                    <a href="mailto:codexsit@gmail.com" className="underline">
+                      Drop us a Message
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-secondary-light">
-        <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="max-w-6xl mx-auto px-4 py-4">
           <p className="text-center text-sm sm:text-base text-secondary-light">
             © 2024 CodeX | All rights reserved
           </p>
