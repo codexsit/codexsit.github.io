@@ -163,7 +163,7 @@ export default function Gallery() {
     <PageTransition>
       <Heading
         text="Gallery"
-        className="text-center absolute top-0 left-0 right-0 mt-4 mb-4 md:mt-8 md:mb-8"
+        className="text-center absolute top-0 left-0 right-0 mb-24"
       />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 m-[5%]">
         {images.map((image, index) => (
@@ -190,7 +190,7 @@ export default function Gallery() {
 
         {modalOpen ? (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 overflow-y-auto">
-            <div className="relative max-h-screen max-w-screen-lg p-4 bg-white rounded-lg flex flex-col items-center justify-center">
+            <div className="relative max-h-screen max-w-screen-lg p-4 bg-white rounded-lg  flex flex-col items-center justify-center">
               <img
                 className="max-h-[80vh] max-w-[80vw] rounded-lg mb-4"
                 src={images[selectedImageIndex].src}
