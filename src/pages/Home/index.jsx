@@ -34,9 +34,9 @@ function Home() {
           <div className="flex-grow mx-auto pr-5 pl-5 space-x-30 py-8">
             <Heading
               text="MEET OUR TEAM"
-              className="text-center absolute top-0 left-0 right-0 mb-24"
+              className="text-center absolute top-0 left-0 right-0"
             />
-            <div className="flex flex-row flex-wrap gap-16 justify-center items-center mt-12">
+            <div className="flex flex-row flex-wrap gap-8 md:gap-16 justify-center items-center mt-12">
               {teamMembersData.slice(0, 3).map((member) => (
                 <TeamMember key={member.name} member={member} />
               ))}
