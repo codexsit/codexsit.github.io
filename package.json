@@ -20,10 +20,12 @@
     "@vitejs/plugin-react": "^4.2.1",
     "baffle": "^0.3.6",
     "framer-motion": "^11.5.4",
+    "gsap": "^3.12.5",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.4",
     "vite": "^5.1.0"

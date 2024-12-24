@@ -11,6 +11,7 @@ function Cursor() {
     y: 0,
   });
 
+  const [isMobile, setIsMobile] = useState(false); // state to track if it's mobile
   const cursorRef = useRef(null);
 
   const debouncedMouseMove = debounce((e) => {
@@ -24,10 +25,21 @@ function Cursor() {
     debouncedMouseMove(e);
   }
 
+  // Check if the device is mobile
   useEffect(() => {
-    if (cursorRef.current) {
-      //   cursorRef.current.style.left = `${mousePosition.x}px`;
-      //   cursorRef.current.style.top = `${mousePosition.y}px`;
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Change 768px to your desired mobile breakpoint
+    };
+    checkIfMobile();
+
+    window.addEventListener("resize", checkIfMobile);
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (cursorRef.current && !isMobile) {
       cursorRef.current.animate(
         {
           left: `${mousePosition.x}px`,
@@ -36,12 +48,16 @@ function Cursor() {
         { duration: 400, fill: "forwards" },
       );
     }
-    window.addEventListener("mousemove", mouseMove);
+    if (!isMobile) {
+      window.addEventListener("mousemove", mouseMove);
+    }
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", mouseMove);
+      }
     };
-  }, [mousePosition]);
+  }, [mousePosition, isMobile]);
 
   const variants = {
     default: {
@@ -59,6 +75,11 @@ function Cursor() {
       width: 0,
     },
   };
+
+  // If on mobile, render nothing (invisible cursor)
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <motion.div

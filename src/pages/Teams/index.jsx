@@ -1,5 +1,5 @@
 import TeamMember from "@/pages/Teams/TeamMember";
-import SkewButton from "@/components/SkewButton";
+// import SkewButton from "@/components/SkewButton";
 import Heading from "@/components/Heading/index";
 import teamMembersData from "./teamsdata.json";
 import PageTransition from "@/components/PageTransition";
@@ -21,7 +21,7 @@ function Teams() {
             <div className="flex flex-row flex-wrap gap-16 justify-center items-center mt-12">
               {teamMembers}
             </div>
-            <SkewButton text="SEE ALL" link="/all-members" className="mt-16" />
+            {/* <SkewButton text="SEE ALL" link="/all-members" className="mt-16" /> */}
           </div>
         </div>
       </div>

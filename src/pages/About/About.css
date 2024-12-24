@@ -1,0 +1,18 @@
+.transition-section {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  z-index: 0;
+}
+
+.transition-section.visible {
+  opacity: 1;
+  transform: translateY(-50%);
+  z-index: 1;
+}
