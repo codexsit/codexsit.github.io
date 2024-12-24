@@ -163,7 +163,7 @@ export default function Gallery() {
     <PageTransition>
       <Heading
         text="Gallery"
-        className="text-center absolute top-0 left-0 right-0 mb-24"
+        className="text-center absolute top-0 left-0 right-0 mt-4 md:mt-8 lg:mt-12 mb-4 md:mb-8 lg:mb-12"
       />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 m-[5%]">
         {images.map((image, index) => (
