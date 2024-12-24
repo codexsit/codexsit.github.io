@@ -5,15 +5,8 @@ import Gallery from "@/pages/Gallery/Gallery";
 import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
-import WebsiteTeam from "../components/WebsiteTeam";
 
 const routes = [
-  {
-    label: "Website Team",
-    path: "/website-team",
-    requireAuth: false,
-    render: <WebsiteTeam />,
-  },
   {
     label: "Loader",
     path: "/loader",
