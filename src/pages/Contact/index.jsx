@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Tilt from "react-parallax-tilt";
 import PageTransition from "@/components/PageTransition";
 
 function Contact() {
@@ -55,49 +56,51 @@ function Contact() {
             Contact Us
           </span>
         </div>
-        <div className="mx-8 md:mx-10 mt-8">
-          <form onSubmit={onSubmit}>
-            <div className="m-auto flex flex-col p-8 bg-background-elevation rounded-lg shadow-lg px-8 md:px-12 py-8 max-w-2xl">
-              <span className=" text-secondary-light uppercase tracking-widest m-auto mb-3">
-                Drop us a message
-              </span>
-              <input
-                type="hidden"
-                name="subject"
-                value="New message from Codex Website"
-              />
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
-                required
-              />
-              <textarea
-                placeholder="Enter your message..."
-                name="message"
-                rows="4"
-                className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
-                required
-              />
-              <div className=" flex justify-center md:justify-end mt-4">
-                <button
-                  type="submit"
-                  className="bg-transparent rounded-full border-2 border-secondary-light px-8 py-2 text-secondary-light cursor-pointer"
-                >
-                  send
-                </button>
+        <Tilt tiltEnable tiltMaxAngleX={2} tiltMaxAngleY={5}>
+          <div className="mx-8 md:mx-10 mt-8 overflow-hidden">
+            <form onSubmit={onSubmit}>
+              <div className="m-auto flex flex-col p-8 bg-background-elevation rounded-lg shadow-lg px-8 md:px-12 py-8 max-w-2xl">
+                <span className=" text-secondary-light uppercase tracking-widest m-auto mb-3">
+                  Drop us a message
+                </span>
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New message from Codex Website"
+                />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
+                  required
+                />
+                <textarea
+                  placeholder="Enter your message..."
+                  name="message"
+                  rows="4"
+                  className="bg-background-elevation py-2 my-3 border-b-2 border-secondary-light text-text-light outline-none"
+                  required
+                />
+                <div className=" flex justify-center md:justify-end mt-4">
+                  <button
+                    type="submit"
+                    className="bg-transparent rounded-full border-2 border-secondary-light px-8 py-2 text-secondary-light cursor-pointer"
+                  >
+                    send
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
+            </form>
+          </div>
+        </Tilt>
       </div>
     </PageTransition>
   );
