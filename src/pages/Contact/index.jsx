@@ -54,9 +54,6 @@ function Contact() {
           <span className="text-outlined uppercase text-8xl font-black text-transparent whitespace-nowrap">
             Contact Us
           </span>
-          <span className="text-text-light uppercase text-8xl font-black">
-            Events
-          </span>
         </div>
         <div className="mx-10 mt-16">
           <form onSubmit={onSubmit}>
