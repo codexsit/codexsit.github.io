@@ -115,7 +115,7 @@ TeamMember.propTypes = {
     github: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.isRequired,
 };
 
 export default TeamMember;
