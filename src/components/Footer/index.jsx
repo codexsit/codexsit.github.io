@@ -1,9 +1,8 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "@/assets/images/logo.svg";
 import SitLogo from "@/assets/images/Teams/sitlogo.svg";
 
-const Footer = () => {
+function Footer() {
   const location = useLocation();
 
   const handleLinkClick = () => {
@@ -38,7 +37,7 @@ const Footer = () => {
                 alt="Symbiosis Logo"
                 className="h-10 md:h-12"
               />
-              <div className="hidden sm:block w-px h-10 bg-secondary-light"></div>
+              <div className="hidden sm:block w-px h-10 bg-secondary-light" />
               <img src={Logo} alt="CodeX Logo" className="h-10 md:h-12" />
             </div>
           </div>
@@ -48,7 +47,7 @@ const Footer = () => {
             <div className="flex-1">
               <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block">
                 QUICK LINKS
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light" />
               </h4>
               <ul className="space-y-2 text-text-light text-sm sm:text-base">
                 {[
@@ -79,7 +78,7 @@ const Footer = () => {
               <div className="flex-1">
                 <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block ">
                   SOCIAL
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light" />
                 </h4>
                 <ul className="space-y-2 text-text-light text-sm sm:text-base">
                   <li className="cursor-pointer">
@@ -101,7 +100,7 @@ const Footer = () => {
                 <div className="relative bottom-0 left-0 w-full">
                   <h4 className="text-lg font-medium mb-4 text-secondary-light relative inline-block sm:block">
                     CONTACT
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-secondary-light" />
                   </h4>
                 </div>
                 <ul className="space-y-2 text-text-light text-sm sm:text-base">
@@ -127,6 +126,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

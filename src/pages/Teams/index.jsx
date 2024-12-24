@@ -13,12 +13,12 @@ function Teams() {
     <PageTransition>
       <div className="min-h-screen">
         <div className="flex justify-center items-center">
-          <div className="flex-grow mx-auto pr-5 pl-5 space-x-30 py-8">
+          <div className="flex-grow mx-auto px-5 space-x-30 pt-8 pb-16">
             <Heading
               text="MEET OUR TEAM"
-              className="text-center absolute top-0 left-0 right-0 mb-24"
+              className="text-center absolute top-0 left-0 right-0 mb-12 md:mb-24"
             />
-            <div className="flex flex-row flex-wrap gap-16 justify-center items-center mt-12">
+            <div className="flex flex-row flex-wrap gap-8 md:gap-16 justify-center items-center mt-4 sm:mt-12">
               {teamMembers}
             </div>
             {/* <SkewButton text="SEE ALL" link="/all-members" className="mt-16" /> */}
