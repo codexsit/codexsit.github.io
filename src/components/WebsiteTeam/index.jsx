@@ -46,7 +46,7 @@ function WebsiteTeam() {
       <div className="flex justify-center items-center">
         <div className="flex flex-col w-full">
           <div className="flex flex-col md:flex-wrap lg:flex-row gap-4 justify-center items-center p-6">
-            <div className="md:min-w-[450px] flex-1 lg:ml-16 text-center xl:text-left text-xl sm:text-2xl md:text-3xl lg:text-[2.7rem] font-poppins space-y-2 ">
+            <div className="md:min-w-[450px] flex-1 lg:ml-16 text-center xl:text-left text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.5rem] font-poppins space-y-2 ">
               <div className="leading-[1.3]">
                 <span className="text-text-websiteteamlight font-thin">
                   Special Thanks
@@ -73,7 +73,7 @@ function WebsiteTeam() {
                 </span>
               </div>
             </div>
-            <div className="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between md:justify-center w-full md:w-min">
+            <div className="flex flex-row flex-wrap md:flex-nowrap gap-4 justify-center md:justify-between md:justify-center w-full md:w-min">
               {teamMembers.slice(0, 2)}
             </div>
           </div>
