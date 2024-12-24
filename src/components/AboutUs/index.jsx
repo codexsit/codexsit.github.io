@@ -174,7 +174,7 @@ export default function AboutSection() {
               ref={paragraphRef}
               className="text-xl md:text-4xl md:leading-snug font-poppins font-semibold"
             >
-              Codex is the coding club at
+              CodeX is the coding club at
               <span className="text-primary">
                 Symbiosis Institute of Technology
               </span>
