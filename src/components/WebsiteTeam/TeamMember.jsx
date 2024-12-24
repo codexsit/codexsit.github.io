@@ -83,12 +83,12 @@ function TeamMember({ member, className }) {
           <img
             src={bgimages[id]}
             alt="background"
-            className="absolute bottom-1 left-1/2 rounded-md transform -translate-x-1/2 w-56 h-56 object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+            className="absolute bottom-1 left-1/2 rounded-md transform -translate-x-1/2 w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover z-0 transition-transform duration-700 group-hover:scale-105"
           />
           <img
             src={image}
             alt={name}
-            className="relative w-72 h-72 mx-auto object-cover z-10 filter grayscale transition duration-500 group-hover:filter-none group-hover:duration-500 group-hover:ease-in-out group-hover:delay-150 group-hover:scale-110"
+            className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto object-cover z-10 filter grayscale transition duration-500 group-hover:filter-none group-hover:duration-500 group-hover:ease-in-out group-hover:delay-150 group-hover:scale-110"
           />
         </div>
         <h2 className="text-2xl mt-6 font-poppins font-semibold text-center tracking-wide text-text-light">

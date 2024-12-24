@@ -158,10 +158,10 @@ export default function AboutSection() {
     <>
       <section className="relative min-h-fit bg-background-dark text-white py-12 md:px-6 lg:px-12 overflow-hidden">
         <div className="absolute top-4 -left-1 w-8 h-8 bg-white rounded-full opacity-100" />
-        <div className="absolute -top-2 right-20 w-20 h-20 bg-primary-dark rounded-full opacity-100 z-10" />
+        <div className="absolute -top-2 right-4 md:right-20 w-20 h-20 bg-primary-dark rounded-full opacity-100 z-10" />
         <div className="max-w-full mx-auto relative z-20 px-4 md:px-0">
           <h1
-            className="text-secondary-dark shadow-black font-poppins font-extrabold text-4xl md:text-6xl lg:text-8xl mb-12 relative z-20"
+            className="text-secondary-dark shadow-black font-poppins font-extrabold text-4xl md:text-6xl lg:text-8xl mb-12 relative z-20 mt-12"
             style={{
               WebkitTextStroke: "2px #737373",
             }}
