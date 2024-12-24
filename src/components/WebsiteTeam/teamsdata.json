@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Miran Firdausi",
+        "batch": "2022-26",
+        "linkedin": "https://www.linkedin.com/in/miran-firdausi/",
+        "instagram": "http://instagram.com/mirvn.zzz",
+        "github": "https://github.com/Miran-Firdausi",
+        "id": 1
+    },
+    {
+        "name": "Achyut Shukla",
+        "batch": "2020-24",
+        "linkedin": "https://www.linkedin.com/in/achyut07/",
+        "instagram": "https://www.instagram.com/__achyut.07__/",
+        "github": "https://github.com/Achyut-0705",
+        "id": 2
+    },
+    {
+        "name": "Mitiksha Paliwal",
+        "batch": "2023-27",
+        "linkedin": "https://www.linkedin.com/in/mitiksha-paliwal/",
+        "instagram": "https://www.instagram.com/_paliwal28/",
+        "github": "https://github.com/Mitiksha-28",
+        "id": 3  
+    },
+    {
+        "name": "Ankush Dutta",
+        "batch": "2023-27",
+        "linkedin": "https://www.linkedin.com/in/ankushdutta/",
+        "instagram": "https://instagram.com/_ehdee_",
+        "github": "https://github.com/gendelta",
+        "id": 4     
+    },
+    {
+        "name": "Abhishek Patawari",
+        "batch": "2023-27",
+        "linkedin": "https://www.linkedin.com/in/abhishek-patawari-ab7510288/",
+        "instagram": "https://www.instagram.com/abhishek_patawari1100/",
+        "github": "https://github.com/Dios-001",
+        "id": 5      
+    },
+    {
+        "name": "Jay Trivedi",
+        "batch": "2022-26",
+        "linkedin": "https://www.linkedin.com/in/jay-trivedi-work/",
+        "instagram": "https://www.instagram.com/jay.triveedi/",
+        "github": "https://github.com/Jayu1214",
+        "id": 6
+    }
+]

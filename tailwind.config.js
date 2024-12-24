@@ -23,6 +23,8 @@ export default {
         text: {
           light: "#F7F7F7",
           dark: "#232323",
+          websiteteamlight: "#B6B6B6",
+          websiteteamyellow: "#FFC686",
         },
         gradient: {
           light: "#383838",
