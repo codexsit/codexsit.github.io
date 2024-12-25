@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Heading from "@/components/Heading/index";
 import PageTransition from "../../components/PageTransition";
 
-const images = [
+export const images = [
   {
     src: "/CodeX-Website/gallery/RUST SESSION/rs1.JPG",
     caption: "Rust Session - Introduction to Rust",
