@@ -5,7 +5,7 @@ import Gallery from "@/pages/Gallery/Gallery";
 import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
-import EventPage from "../pages/Events/EventPage";
+import Events from "../pages/Events";
 
 const routes = [
   {
@@ -42,7 +42,7 @@ const routes = [
     label: "Events",
     path: "/events",
     requireAuth: false,
-    render: <EventPage />,
+    render: <Events />,
   },
   {
     label: "Home",

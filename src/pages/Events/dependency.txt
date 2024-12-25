@@ -1,5 +1,0 @@
-idk what im doing rn, 
-these are some dependencies might need to configure server 
-
-
-brew install pkg-config cairo pango libpng jpeg giflib librsvg
