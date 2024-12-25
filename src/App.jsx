@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
+import Footer from "@/components/Footer/index";
 import Cursor from "./components/Cursor";
 import CursorVariantProvider from "@/context/CursorVariantProvider";
 import Loader from "@/components/Loader";
@@ -45,6 +46,7 @@ function App() {
                 />
               ))}
             </Routes>
+            <Footer />
           </Router>
         )}
       </AnimatePresence>
