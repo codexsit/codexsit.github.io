@@ -31,14 +31,18 @@ function Footer() {
               members can learn, collaborate, and grow their coding expertise
               through a variety of activities and events.
             </p>
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-4 md:w-full">
+            <div className="flex flex-col sm:flex-row items-center gap-4 md:w-full">
               <img
                 src={SitLogo}
                 alt="Symbiosis Logo"
-                className="h-10 md:h-12"
+                className="h-12"
               />
-              <div className="hidden sm:block w-px h-10 bg-secondary-light" />
-              <img src={Logo} alt="CodeX Logo" className="h-10 md:h-12" />
+              <div className="hidden sm:block w-px h-12 bg-secondary-light"></div>
+              <img
+                src={Logo}
+                alt="CodeX Logo"
+                className="h-16 md:h-20 self-center"
+              />
             </div>
           </div>
 
