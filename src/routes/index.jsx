@@ -5,6 +5,7 @@ import Gallery from "@/pages/Gallery/Gallery";
 import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
+import Events from "../pages/Events";
 
 const routes = [
   {
@@ -36,6 +37,12 @@ const routes = [
     path: "/teams",
     requireAuth: false,
     render: <Teams />,
+  },
+  {
+    label: "Events",
+    path: "/events",
+    requireAuth: false,
+    render: <Events />,
   },
   {
     label: "Home",
