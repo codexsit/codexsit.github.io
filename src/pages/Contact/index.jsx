@@ -35,7 +35,7 @@ function Contact() {
 
   return (
     <PageTransition>
-      <div className="bg-background-dark h-[calc(100vh-4.6rem)]">
+      <div className="bg-background-dark h-[calc(100vh-4.6rem)] overflow-hidden">
         <div
           className={`${
             showBanner
