@@ -11,5 +11,5 @@ This is the official website of CodeX Club, SIT.
 
 ### Contributors
 
-Ankush Dutta
+Ankush Dutta   
 Miran Firdausi
