@@ -19,7 +19,9 @@ function Navbar({ links }) {
 
   return (
     <nav
-      className={`shadow-md w-full flex xs:flex-col md:flex-row ${isOpen ? "xs:h-screen" : ""} md:h-full justify-between items-center pr-6 bg-secondary-dark relative z-50`}
+      className={`shadow-md w-full flex xs:flex-col md:flex-row ${
+        isOpen ? "xs:h-screen" : ""
+      } md:h-full justify-between items-center pr-6 bg-secondary-dark relative z-50`}
     >
       <div className="flex flex-row justify-between xs:w-full md:w-auto items-center">
         <Link
@@ -62,11 +64,7 @@ function Navbar({ links }) {
             </Link>
             <span
               className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary rounded ${
-                location.pathname
-                  .toLowerCase()
-                  .includes(link.path.toLowerCase())
-                  ? "w-full"
-                  : "max-w-0"
+                location.pathname === link.path ? "w-full" : "max-w-0"
               }`}
             />
           </li>
