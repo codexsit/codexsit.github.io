@@ -192,7 +192,7 @@ export default function Gallery() {
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 overflow-y-auto">
             <div className="relative max-h-screen max-w-screen-lg p-4 bg-white rounded-lg  flex flex-col items-center justify-center">
               <img
-                className="max-h-[80vh] max-w-[80vw] rounded-lg mb-4"
+                className="max-h-[80vh] rounded-lg mb-4"
                 src={images[selectedImageIndex].src}
                 alt={`Selected gallery img ${selectedImageIndex + 1}`}
               />
