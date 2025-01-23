@@ -86,10 +86,10 @@ export default function Bug2Bot() {
   const gradientFontSize = 100;
   return (
     <PageTransition>
-      <div className="text-white">
+      <div className="text-white overflow-hidden">
         {/* Section 1 START ====== */}
         <div
-          className="flex flex-col items-center pt-10 w-full justify-center"
+          className="flex flex-col items-center p-10 w-full justify-center"
           style={{
             minHeight: "95vh",
             backgroundImage: `url(${Background1})`,
@@ -109,7 +109,7 @@ export default function Bug2Bot() {
           <img src={Bug2BotLogo} alt="bug2botLogo" />
           <div className="text-3xl font-orbitron">Event Starts in:</div>
           <div
-            className="text-3xl font-orbitron"
+            className="text-3xl font-orbitron text-center"
             style={{
               WebkitTextStroke: "0.5px red",
               WebkitBackgroundClip: "text",
@@ -120,9 +120,15 @@ export default function Bug2Bot() {
             {remainingTime.days} Days {remainingTime.hours} Hours{" "}
             {remainingTime.minutes} Mins
           </div>
-          <div className="font-orbitron">Date: 24th & 25th January</div>
-          <div className="font-orbitron">Venue: CL9 & 10</div>
-          <div className="font-orbitron">(DBMS & Applied AI Lab)</div>
+          <div className="font-orbitron text-2xl text-center">
+            Date: 24th & 25th January
+          </div>
+          <div className="font-orbitron text-2xl text-center">
+            Venue: CL9 & 10
+          </div>
+          <div className="font-orbitron text-2xl text-center">
+            (DBMS & Applied AI Lab)
+          </div>
         </div>
         {/* Section 1 END ====== */}
         {/* Section 2, 3 Container START ===== */}
@@ -133,17 +139,14 @@ export default function Bug2Bot() {
           }}
         >
           {/* Section 2 START ====== */}
-          <div
-            className="w-full flex flex-col items-center p-10"
-            style={{ backgroundImage: `url(${Background2})` }}
-          >
+          <div className="w-full flex flex-col items-center p-10">
             <div className="grid lg:grid-cols-2 gap-4 sm:grid-cols-1 lg:container md:container">
               {/* Col 1 */}
               <div>
-                <div className="font-orbitron font-bold">
+                <div className="font-orbitron font-bold text-xl">
                   Join the Challenge!
                 </div>
-                <div className="font-orbitron sm">
+                <div className="font-orbitron text-xl">
                   Unleash your tech prowess in this ultimate challenge where
                   coding precision meets hands-on ingenuity. Teams will tackle
                   gripping puzzles to unlock a path toward an innovative and
@@ -155,9 +158,6 @@ export default function Bug2Bot() {
               <div className="mt-20">
                 {/* Maze Image */}
                 <img src={MazeImage} alt="Maze" />
-                <div className="mt-20 font-orbitron text-3xl">
-                  TIMINGS: 12PM - 4PM
-                </div>
               </div>
             </div>
           </div>
@@ -171,26 +171,37 @@ export default function Bug2Bot() {
               </div>
               <div className="flex flex-col gap-6">
                 {/* DEBUG Card */}
+
                 <div
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-80 bg-cover"
+                  className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg w-full sm:w-[30rem] min-h-[10rem] sm:h-[15rem] bg-cover flex flex-col justify-center"
                   style={{
                     backgroundImage: `url(${Card1Background})`,
                   }}
                 >
-                  <div className="text-2xl font-orbitron mb-4 font-bold">
+                  <div className="text-xl sm:text-2xl font-orbitron mb-2 sm:mb-4 font-bold">
                     DEBUG
                   </div>
-                  <ol className="list-decimal list-inside">
-                    <li className="font-orbitron">Form a team of 4 - 5</li>
-                    <li className="font-orbitron">Find Qr, scan it</li>
-                    <li className="font-orbitron">Find PC number</li>
-                    <li className="font-orbitron">Debugging challenges</li>
-                    <li className="font-orbitron">Programming languages</li>
+                  <ol className="list-decimal list-inside space-y-1 sm:space-y-2">
+                    <li className="font-orbitron text-base sm:text-xl">
+                      Form a team of 3 - 4.
+                    </li>
+                    <li className="font-orbitron text-base sm:text-xl">
+                      Find Qr, scan it.
+                    </li>
+                    <li className="font-orbitron text-base sm:text-xl">
+                      Look for PC number.
+                    </li>
+                    <li className="font-orbitron text-base sm:text-xl">
+                      2 Debugging challenges.
+                    </li>
+                    <li className="font-orbitron text-base sm:text-xl">
+                      4 Programming languages.
+                    </li>
                   </ol>
                 </div>
                 {/* BUILD Card */}
                 <div
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-80 self-end bg-cover"
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg sm:w-[30rem] min-h-[10rem] sm:h-[15rem] bg-cover flex flex-col justify-center self-end "
                   style={{
                     backgroundImage: `url(${Card2Background})`,
                   }}
@@ -199,16 +210,20 @@ export default function Bug2Bot() {
                     BUILD
                   </div>
                   <ol className="list-decimal list-inside">
-                    <li className="font-orbitron">Get the components</li>
-                    <li className="font-orbitron">
-                      Assemble the RC car and race!
+                    <li className="font-orbitron text-xl">
+                      Get the components.
                     </li>
-                    <li className="font-orbitron">Total Time - 15 Minutes</li>
+                    <li className="font-orbitron text-xl">
+                      Assemble the RC car and race!!
+                    </li>
+                    <li className="font-orbitron text-xl">
+                      Total Time - 15 Minutes.
+                    </li>
                   </ol>
                 </div>
                 {/* CONQUER Card */}
                 <div
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-80 bg-cover"
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg sm:w-[30rem] min-h-[10rem] sm:h-[15rem] bg-cover flex flex-col justify-center"
                   style={{
                     backgroundImage: `url(${Card3Background})`,
                   }}
@@ -217,11 +232,15 @@ export default function Bug2Bot() {
                     CONQUER
                   </div>
                   <ol className="list-decimal list-inside">
-                    <li className="font-orbitron">
-                      Navigate through the race track
+                    <li className="font-orbitron text-xl">
+                      Navigate through the race track.
                     </li>
-                    <li className="font-orbitron">Outsmart the traps</li>
-                    <li className="font-orbitron">reach the finish line</li>
+                    <li className="font-orbitron text-xl">
+                      Outsmart the traps.
+                    </li>
+                    <li className="font-orbitron text-xl">
+                      Reach the finish line.
+                    </li>
                   </ol>
                 </div>
               </div>
