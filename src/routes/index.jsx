@@ -62,7 +62,7 @@ const routes = [
     path: "/symbitech2025",
     requireAuth: false,
     render: <Bug2Bot />,
-  }
+  },
 ];
 
 export default routes;
