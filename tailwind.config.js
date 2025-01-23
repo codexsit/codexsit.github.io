@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
@@ -41,6 +42,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         gothic: ["League Gothic", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
       },
     },
   },

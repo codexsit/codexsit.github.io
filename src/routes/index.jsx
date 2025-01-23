@@ -6,6 +6,7 @@ import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
 import Events from "../pages/Events";
+import Bug2Bot from "../pages/Bug2Bot";
 
 const routes = [
   {
@@ -56,6 +57,12 @@ const routes = [
     requireAuth: false,
     render: <PageNotFound />,
   },
+  {
+    label: "Bug2Bot",
+    path: "/symbitech2025",
+    requireAuth: false,
+    render: <Bug2Bot />,
+  }
 ];
 
 export default routes;

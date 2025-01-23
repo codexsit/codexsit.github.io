@@ -17,6 +17,7 @@ const navLinks = [
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },
   { name: "Contact Us", path: "/contact" },
+  { name: "Symbitech 2025", path: "/symbitech2025"}
 ];
 
 function App() {
