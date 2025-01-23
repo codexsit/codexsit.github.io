@@ -1,5 +1,6 @@
-import PageTransition from "@/components/PageTransition";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import PageTransition from "@/components/PageTransition";
 import MazeImage from "../../assets/images/Bug2Bot/mazeImage.png";
 import Bug2BotLogo from "../../assets/images/Bug2Bot/bug2botLogo.svg";
 import Background1 from "../../assets/images/Bug2Bot/background1.png";
@@ -7,7 +8,6 @@ import Background2 from "../../assets/images/Bug2Bot/background2.png";
 import Card1Background from "../../assets/images/Bug2Bot/card1_debug.png";
 import Card2Background from "../../assets/images/Bug2Bot/card2_build.png";
 import Card3Background from "../../assets/images/Bug2Bot/card3_conquer.png";
-import React from "react";
 
 const targetDate = new Date("2025-01-24T12:00:00");
 
@@ -20,6 +20,7 @@ const targetDate = new Date("2025-01-24T12:00:00");
  * @param {number} props.fontSize - Font size of the text
  * @param {string[]} props.gradientColors - Array of two colors for gradient
  */
+
 function GradientTextSVG({ text, width, height, fontSize, gradientColors }) {
   return (
     <svg height={height} viewBox={`0 0 ${width} ${height}`} className="w-full">
@@ -47,34 +48,39 @@ function GradientTextSVG({ text, width, height, fontSize, gradientColors }) {
   );
 }
 
+GradientTextSVG.propTypes = {
+  text: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  fontSize: PropTypes.number.isRequired,
+  gradientColors: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
 export default function Bug2Bot() {
   const [remainingTime, setRemainingTime] = useState({
-    days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
 
   const updateCountdown = () => {
-    const now = new Date(); // Current date and time
-    const diff = targetDate.getTime() - now.getTime(); // Difference in milliseconds
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
 
     if (diff <= 0) {
       setRemainingTime({
-        days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0,
       });
-      return; // Stop updating if the target time is reached
+      return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    setRemainingTime({ days, hours, minutes, seconds });
+    setRemainingTime({ hours, minutes, seconds });
   };
 
   useEffect(() => {
@@ -117,8 +123,8 @@ export default function Bug2Bot() {
               backgroundImage: "linear-gradient(to right, #FD4445, #F2C849)",
             }}
           >
-            {remainingTime.days} Days {remainingTime.hours} Hours{" "}
-            {remainingTime.minutes} Mins
+            {remainingTime.hours} Hours {remainingTime.minutes} Mins{" "}
+            {remainingTime.seconds} Secs
           </div>
           <div className="font-orbitron text-2xl text-center">
             Date: 24th & 25th January

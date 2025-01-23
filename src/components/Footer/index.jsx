@@ -33,7 +33,7 @@ function Footer() {
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 md:w-full">
               <img src={SitLogo} alt="Symbiosis Logo" className="h-12" />
-              <div className="hidden sm:block w-px h-12 bg-secondary-light"></div>
+              <div className="hidden sm:block w-px h-12 bg-secondary-light" />
               <img
                 src={Logo}
                 alt="CodeX Logo"
