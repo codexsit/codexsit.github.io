@@ -32,11 +32,7 @@ function Footer() {
               through a variety of activities and events.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 md:w-full">
-              <img
-                src={SitLogo}
-                alt="Symbiosis Logo"
-                className="h-12"
-              />
+              <img src={SitLogo} alt="Symbiosis Logo" className="h-12" />
               <div className="hidden sm:block w-px h-12 bg-secondary-light"></div>
               <img
                 src={Logo}
@@ -61,6 +57,7 @@ function Footer() {
                   { name: "Gallery", path: "/gallery" },
                   { name: "Events", path: "/events" },
                   { name: "Contact", path: "/contact" },
+                  { name: "SymbiTech2025", path: "/symbitech2025" },
                 ].map((link) => (
                   <li
                     key={link.name}
