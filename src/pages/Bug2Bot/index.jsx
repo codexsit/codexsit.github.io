@@ -62,6 +62,13 @@ export default function Bug2Bot() {
     minutes: 0,
     seconds: 0,
   });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [spanContents, setSpanContents] = useState([
+    "unlock",
+    "team",
+    "15",
+    "race",
+  ]);
 
   const updateCountdown = () => {
     const now = new Date();
@@ -88,6 +95,35 @@ export default function Bug2Bot() {
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const PCs = ["4", "8", "17", "28"];
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const updateIndex = () => {
+      const now = new Date();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+      const totalMinutes = hours * 60 + minutes;
+      const newIndex = Math.floor(totalMinutes / 15) % PCs.length;
+      setCurrentIndex(newIndex);
+    };
+
+    revealElements.forEach((element, i) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        updateIndex();
+        if (i === currentIndex) {
+          setSpanContents((prevContents) => {
+            const newContents = [...prevContents];
+            newContents[i] = btoa(PCs[i]);
+            return newContents;
+          });
+          alert(`PC Number: ${btoa(PCs[i])}`);
+        }
+      });
+    });
+  }, [currentIndex]);
 
   const gradientFontSize = 100;
   return (
@@ -155,9 +191,13 @@ export default function Bug2Bot() {
                 <div className="font-orbitron text-xl">
                   Unleash your tech prowess in this ultimate challenge where
                   coding precision meets hands-on ingenuity. Teams will tackle
-                  gripping puzzles to unlock a path toward an innovative and
-                  competitive build. Navigate through tasks designed to test
-                  your creativity, strategy, and teamwork!
+                  gripping puzzles to{" "}
+                  <span className="reveal font-orbitron">
+                    {spanContents[0]}
+                  </span>{" "}
+                  a path toward an innovative and competitive build. Navigate
+                  through tasks designed to test your creativity, strategy, and
+                  teamwork!
                 </div>
               </div>
               {/* Col 2 */}
@@ -189,7 +229,11 @@ export default function Bug2Bot() {
                   </div>
                   <ol className="list-decimal list-inside space-y-1 sm:space-y-2">
                     <li className="font-orbitron text-base sm:text-xl">
-                      Form a team of 3 - 4.
+                      Form a{" "}
+                      <span className="reveal font-orbitron">
+                        {spanContents[1]}
+                      </span>{" "}
+                      of 3 - 4.
                     </li>
                     <li className="font-orbitron text-base sm:text-xl">
                       Find Qr, scan it.
@@ -223,7 +267,11 @@ export default function Bug2Bot() {
                       Assemble the RC car and race!!
                     </li>
                     <li className="font-orbitron text-xl">
-                      Total Time - 15 Minutes.
+                      Total Time -{" "}
+                      <span className="reveal font-orbitron">
+                        {spanContents[2]}
+                      </span>{" "}
+                      Minutes.
                     </li>
                   </ol>
                 </div>
@@ -239,7 +287,11 @@ export default function Bug2Bot() {
                   </div>
                   <ol className="list-decimal list-inside">
                     <li className="font-orbitron text-xl">
-                      Navigate through the race track.
+                      Navigate through the{" "}
+                      <span className="reveal font-orbitron">
+                        {spanContents[3]}
+                      </span>{" "}
+                      track.
                     </li>
                     <li className="font-orbitron text-xl">
                       Outsmart the traps.
