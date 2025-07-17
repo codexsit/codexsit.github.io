@@ -6,6 +6,9 @@ on:
       - dev
     types:
       - closed
+  push:
+    branches:
+      - dev
 
 jobs:
   build:

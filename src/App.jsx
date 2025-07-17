@@ -11,11 +11,13 @@ import Loader from "@/components/Loader";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const navLinks = [
+  { name: "Home", path: "/" },
   { name: "About Us", path: "/about-us" },
   { name: "Our Team", path: "/teams" },
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },
   { name: "Contact Us", path: "/contact" },
+  { name: "Symbitech 2025", path: "/symbitech2025" },
 ];
 
 function App() {
