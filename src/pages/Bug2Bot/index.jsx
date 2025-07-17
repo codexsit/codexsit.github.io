@@ -119,6 +119,7 @@ export default function Bug2Bot() {
             newContents[i] = btoa(PCs[i]);
             return newContents;
           });
+          // eslint-disable-next-line no-alert
           alert(`PC Number: ${btoa(PCs[i])}`);
         }
       });
