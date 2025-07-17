@@ -121,7 +121,7 @@ function Footer() {
       <div className="border-t border-secondary-light">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <p className="text-center text-sm sm:text-base text-secondary-light">
-            © 2024 CodeX | All rights reserved
+            © 2025 CodeX | All rights reserved
           </p>
         </div>
       </div>
