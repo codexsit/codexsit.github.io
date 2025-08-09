@@ -4,22 +4,24 @@ import Tilt from "react-parallax-tilt";
 import LinkedInIcon from "@/assets/images/Teams/linkedin.svg";
 import GithubIcon from "@/assets/images/Teams/github.svg";
 import InstagramIcon from "@/assets/images/Teams/instagram.svg";
-import SakshamGuptaImage from "@/assets/images/Core/SakshamGupta.jpg";
-import RupaliGangardeImage from "@/assets/images/Core/RupaliGangarde.jpg";
-import SehajSalujaImage from "@/assets/images/Core/SehajSaluja.jpg";
-import PramitSharmaImage from "@/assets/images/Core/PramitSharma.jpg";
-import ShraddhaBhaskarImage from "@/assets/images/Core/ShraddhaBhaskar.jpg";
-import GarretFernandesImage from "@/assets/images/Core/GarretFernandes.jpg";
-import BoscoChanamImage from "@/assets/images/Core/BoscoChanam.jpg";
+import RupaliGangardeImage from "@/assets/images/Core_2024/RupaliGangarde.jpg";
+import PramitSharmaImage from "@/assets/images/Core_2025/PramitSharma.jpg";
+import PranavSuriImage from "@/assets/images/Core_2025/PranavSuri.jpg";
+import MitikshaPaliwalImage from "@/assets/images/Core_2025/MitikshaPaliwal.jpg";
+import AnkushDuttaImage from "@/assets/images/Core_2025/AnkushDutta.jpg";
+import ManasviPawaImage from "@/assets/images/Core_2025/ManasviPawa.jpg";
+import AmannyuGondkarImage from "@/assets/images/Core_2025/AmannyuGondkar.jpg";
+import MiranFirdausiImage from "@/assets/images/Core_2025/MiranFirdausi.jpg"; 
 
 const images = {
-  1: SakshamGuptaImage,
+  1: PramitSharmaImage,
   2: RupaliGangardeImage,
-  3: SehajSalujaImage,
-  4: PramitSharmaImage,
-  5: ShraddhaBhaskarImage,
-  6: GarretFernandesImage,
-  7: BoscoChanamImage,
+  3: PranavSuriImage,
+  4: MitikshaPaliwalImage,
+  5: MiranFirdausiImage,
+  6: AnkushDuttaImage,
+  7: ManasviPawaImage,
+  8: AmannyuGondkarImage,
 };
 
 function TeamMember({ member }) {
