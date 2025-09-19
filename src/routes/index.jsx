@@ -6,7 +6,7 @@ import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
 import Events from "../pages/Events";
-import Bug2Bot from "../pages/Bug2Bot";
+import TraitorsGambit from "../pages/TraitorsGambit";
 
 const routes = [
   {
@@ -58,10 +58,10 @@ const routes = [
     render: <PageNotFound />,
   },
   {
-    label: "Bug2Bot",
+    label: "TraitorsGambit",
     path: "/symbitech2025",
     requireAuth: false,
-    render: <Bug2Bot />,
+    render: <TraitorsGambit />,
   },
 ];
 
