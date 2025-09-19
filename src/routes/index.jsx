@@ -6,7 +6,6 @@ import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
 import Events from "../pages/Events";
-import Bug2Bot from "../pages/Bug2Bot";
 import TraitorsGambit from "../pages/TraitorsGambit";
 
 const routes = [
