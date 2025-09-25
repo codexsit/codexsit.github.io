@@ -10,37 +10,37 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutSection() {
   const images1 = [
     {
-      src: "/CodeX-Website/gallery/AIML SESSION/aiml6.jpg",
+      src: "/gallery/AIML SESSION/aiml6.jpg",
       alt: "AIML Session",
       key: 0,
     },
     {
-      src: "/CodeX-Website/gallery/Community Session/cs1.jpg",
+      src: "/gallery/Community Session/cs1.jpg",
       alt: "Community Session",
       key: 1,
     },
     {
-      src: "/CodeX-Website/gallery/Generative ai session/gas3.jpg",
+      src: "/gallery/Generative ai session/gas3.jpg",
       alt: "Generative AI Session",
       key: 2,
     },
     {
-      src: "/CodeX-Website/gallery/HackTober Fest/htf2_1.jpg",
+      src: "/gallery/HackTober Fest/htf2_1.jpg",
       alt: "HackTober Fest Session",
       key: 3,
     },
     {
-      src: "/CodeX-Website/gallery/Laser Lock/ll7.jpg",
+      src: "/gallery/Laser Lock/ll7.jpg",
       alt: "Laser Lock",
       key: 4,
     },
     {
-      src: "/CodeX-Website/gallery/RUST SESSION/rs1.JPG",
+      src: "/gallery/RUST SESSION/rs1.JPG",
       alt: "image1-6",
       key: 5,
     },
     {
-      src: "/CodeX-Website/gallery/AIML SESSION/aiml5.jpg",
+      src: "/gallery/AIML SESSION/aiml5.jpg",
       alt: "image1-7",
       key: 6,
     },
@@ -48,37 +48,37 @@ export default function AboutSection() {
 
   const images2 = [
     {
-      src: "/CodeX-Website/gallery/Community Session/cs2.jpg",
+      src: "/gallery/Community Session/cs2.jpg",
       alt: "Community Session",
       key: 0,
     },
     {
-      src: "/CodeX-Website/gallery/Generative ai session/gas1.jpg",
+      src: "/gallery/Generative ai session/gas1.jpg",
       alt: "Gen AI Session",
       key: 1,
     },
     {
-      src: "/CodeX-Website/gallery/HackTober Fest/htf3_1.jpg",
+      src: "/gallery/HackTober Fest/htf3_1.jpg",
       alt: "HackTober Fest Session",
       key: 2,
     },
     {
-      src: "/CodeX-Website/gallery/Laser Lock/ll9.jpg",
+      src: "/gallery/Laser Lock/ll9.jpg",
       alt: "Laser Lock Event",
       key: 3,
     },
     {
-      src: "/CodeX-Website/gallery/HackTober Fest/htf4_1.jpg",
+      src: "/gallery/HackTober Fest/htf4_1.jpg",
       alt: "HackTober Fest Session",
       key: 4,
     },
     {
-      src: "/CodeX-Website/gallery/AIML SESSION/aiml2.jpg",
+      src: "/gallery/AIML SESSION/aiml2.jpg",
       alt: "AIML Session",
       key: 5,
     },
     {
-      src: "/CodeX-Website/gallery/AIML SESSION/aiml3.jpg",
+      src: "/gallery/AIML SESSION/aiml3.jpg",
       alt: "AIML Session",
       key: 6,
     },

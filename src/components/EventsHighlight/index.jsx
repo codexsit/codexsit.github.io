@@ -8,37 +8,37 @@ function EventsHighlight() {
   const images = [
     {
       key: 0,
-      url: "/CodeX-Website/gallery/Community Session/cs1.jpg",
+      url: "/gallery/Community Session/cs1.jpg",
       alt: "Image 1",
       side: "left",
     },
     {
       key: 1,
-      url: "/CodeX-Website/gallery/AIML SESSION/aiml1.jpg",
+      url: "/gallery/AIML SESSION/aiml1.jpg",
       alt: "Image 2",
       side: "right",
     },
     {
       key: 2,
-      url: "/CodeX-Website/gallery//AIML SESSION/aiml6.jpg",
+      url: "/gallery//AIML SESSION/aiml6.jpg",
       alt: "Image 3",
       side: "left",
     },
     {
       key: 3,
-      url: "/CodeX-Website/gallery/Community Session/cs3.jpg",
+      url: "/gallery/Community Session/cs3.jpg",
       alt: "Image 4",
       side: "right",
     },
     {
       key: 4,
-      url: "/CodeX-Website/gallery/HackTober Fest/htf1_1.jpg",
+      url: "/gallery/HackTober Fest/htf1_1.jpg",
       alt: "Image 5",
       side: "left",
     },
     {
       key: 5,
-      url: "/CodeX-Website/gallery/Laser Lock/ll1.jpg",
+      url: "/gallery/Laser Lock/ll1.jpg",
       alt: "Image 6",
       side: "right",
     },

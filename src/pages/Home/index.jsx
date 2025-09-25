@@ -23,14 +23,14 @@ function Home() {
             onMouseOver={setCursorVariantText}
             onMouseLeave={setCursorVariantDefault}
             className="absolute top-[67%] md:top-[53%] -left-[10%] w-[300px] md:w-[35vw]"
-            src="/CodeX-Website/images/hero2.png"
+            src="/images/hero2.png"
             alt="codex-team - laser lock"
           />
           <img
             onMouseOver={setCursorVariantText}
             onMouseLeave={setCursorVariantDefault}
             className="absolute top-[13%] -right-[10%] w-[300px] md:w-[35vw]"
-            src="/CodeX-Website/images/hero1.png"
+            src="/images/hero1.png"
             alt="codex guest session"
           />
           <div className="bubble bubble1" />

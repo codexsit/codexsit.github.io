@@ -1,12 +1,12 @@
 const events = [
   {
     images: [
-      "/CodeX-Website/gallery/AIML SESSION/aiml6.jpg",
-      "/CodeX-Website/gallery/AIML SESSION/aiml1.jpg",
-      "/CodeX-Website/gallery/AIML SESSION/aiml2.jpg",
-      "/CodeX-Website/gallery/AIML SESSION/aiml3.jpg",
-      "/CodeX-Website/gallery/AIML SESSION/aiml4.jpg",
-      "/CodeX-Website/gallery/AIML SESSION/aiml5.jpg",
+      "/gallery/AIML SESSION/aiml6.jpg",
+      "/gallery/AIML SESSION/aiml1.jpg",
+      "/gallery/AIML SESSION/aiml2.jpg",
+      "/gallery/AIML SESSION/aiml3.jpg",
+      "/gallery/AIML SESSION/aiml4.jpg",
+      "/gallery/AIML SESSION/aiml5.jpg",
     ],
     title: "AIML Session",
     date: "14th October, 2023",
@@ -15,9 +15,9 @@ const events = [
   },
   {
     images: [
-      "/CodeX-Website/gallery/RUST SESSION/rs1.JPG",
-      "/CodeX-Website/gallery/RUST SESSION/rs2.jpg",
-      "/CodeX-Website/gallery/RUST SESSION/rs3.jpg    ",
+      "/gallery/RUST SESSION/rs1.JPG",
+      "/gallery/RUST SESSION/rs2.jpg",
+      "/gallery/RUST SESSION/rs3.jpg    ",
     ],
     title: "Rust Session",
     date: "7th October, 2023",
@@ -26,11 +26,11 @@ const events = [
   },
   {
     images: [
-      "/CodeX-Website/gallery/HackTober Fest/htf1_1.jpg",
-      "/CodeX-Website/gallery/HackTober Fest/htf2_1.jpg",
-      "/CodeX-Website/gallery/HackTober Fest/htf3_1.jpg",
-      "/CodeX-Website/gallery/HackTober Fest/htf4_1.jpg",
-      "/CodeX-Website/gallery/HackTober Fest/htf5_1.jpg",
+      "/gallery/HackTober Fest/htf1_1.jpg",
+      "/gallery/HackTober Fest/htf2_1.jpg",
+      "/gallery/HackTober Fest/htf3_1.jpg",
+      "/gallery/HackTober Fest/htf4_1.jpg",
+      "/gallery/HackTober Fest/htf5_1.jpg",
     ],
     title: "Hacktober Fest - Open Source Contribution Session",
     date: "30th September, 2023",
@@ -39,9 +39,9 @@ const events = [
   },
   {
     images: [
-      "/CodeX-Website/gallery/Generative ai session/gas1.jpg",
-      "/CodeX-Website/gallery/Generative ai session/gas2.jpg",
-      "/CodeX-Website/gallery/Generative ai session/gas3.jpg",
+      "/gallery/Generative ai session/gas1.jpg",
+      "/gallery/Generative ai session/gas2.jpg",
+      "/gallery/Generative ai session/gas3.jpg",
     ],
     title:
       "Guest lecture on generative AI for Building and Scaling Applications in the Real World",
@@ -51,13 +51,13 @@ const events = [
   },
   {
     images: [
-      "/CodeX-Website/gallery/Laser Lock/ll1.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll4.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll5.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll6.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll7.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll8.jpg",
-      "/CodeX-Website/gallery/Laser Lock/ll9.jpg",
+      "/gallery/Laser Lock/ll1.jpg",
+      "/gallery/Laser Lock/ll4.jpg",
+      "/gallery/Laser Lock/ll5.jpg",
+      "/gallery/Laser Lock/ll6.jpg",
+      "/gallery/Laser Lock/ll7.jpg",
+      "/gallery/Laser Lock/ll8.jpg",
+      "/gallery/Laser Lock/ll9.jpg",
     ],
     title: "Laser Lock - SymbiTech",
     date: "20th September, 2024- 21st September, 2024",
