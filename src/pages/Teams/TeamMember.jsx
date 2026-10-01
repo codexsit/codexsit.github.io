@@ -4,24 +4,22 @@ import Tilt from "react-parallax-tilt";
 import LinkedInIcon from "@/assets/images/Teams/linkedin.svg";
 import GithubIcon from "@/assets/images/Teams/github.svg";
 import InstagramIcon from "@/assets/images/Teams/instagram.svg";
-import RupaliGangardeImage from "@/assets/images/Core_2024/RupaliGangarde.jpg";
-import PramitSharmaImage from "@/assets/images/Core_2025/PramitSharma.jpg";
-import PranavSuriImage from "@/assets/images/Core_2025/PranavSuri.jpg";
-import MitikshaPaliwalImage from "@/assets/images/Core_2025/MitikshaPaliwal.jpg";
-import AnkushDuttaImage from "@/assets/images/Core_2025/AnkushDutta.jpg";
-import ManasviPawaImage from "@/assets/images/Core_2025/ManasviPawa.jpg";
-import AmannyuGondkarImage from "@/assets/images/Core_2025/AmannyuGondkar.jpg";
-import MiranFirdausiImage from "@/assets/images/Core_2025/MiranFirdausi.jpg"; 
+import AnkushDuttaImage from "@/assets/images/Core_2026/AnkushDutta.webp"
+import MitikshaPaliwalImage from "@/assets/images/Core_2026/MitikshaPaliwal.webp"
+import VinayakVarshneyImage from "@/assets/images/Core_2026/VinayakVarshney.webp"
+import LakshyaAgarwalImage from "@/assets/images/Core_2026/LakshyaAgarwal.webp"
+import MantavyaAnandImage from "@/assets/images/Core_2026/MantavyaAnand.webp"
+import MananKatarmalImage from "@/assets/images/Core_2026/MananKatarmal.webp"
+import AkashBhattacharyyaImage from "@/assets/images/Core_2026/AkashBhattacharyya.webp"
 
 const images = {
-  1: PramitSharmaImage,
-  2: RupaliGangardeImage,
-  3: PranavSuriImage,
-  4: MitikshaPaliwalImage,
-  5: MiranFirdausiImage,
-  6: AnkushDuttaImage,
-  7: ManasviPawaImage,
-  8: AmannyuGondkarImage,
+  1: AnkushDuttaImage,
+  2: AkashBhattacharyyaImage,
+  3: MitikshaPaliwalImage,
+  4: VinayakVarshneyImage,
+  5: LakshyaAgarwalImage,
+  6: MantavyaAnandImage,
+  7: MananKatarmalImage
 };
 
 function TeamMember({ member }) {
