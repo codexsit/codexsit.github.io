@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Pramit Sharma",
+        "position": "PRESIDENT",
+        "description": "\"As president, I work to get the best out of my team, stay open to different ideas, and create a strong coding culture in our college.\"",
+        "linkedin": "https://linkedin.com/in/pramit-sharma/",
+        "instagram": "https://instagram.com/pramit.sharma",
+        "github": "https://github.com/MatricalDefunkt",
+        "id": 1
+    },
+    {
+        "name": "Dr. Rupali Gangarde",
+        "position": "FACULTY ADVISOR",
+        "description": "\"As the guiding light of Codex Club, I provide mentorship, share insights from my experience, and help our team excel in fostering innovation and collaboration.\"",
+        "linkedin": "https://www.linkedin.com/in/dr-rupali-gangarde-33aa79121/",
+        "instagram": "https://instagram.com/rupali.gangarde",
+        "github": "https://github.com/",
+        "id": 2
+    },
+    {
+        "name": "Pranav Suri",
+        "position": "VICE-PRESIDENT",
+        "description": "\"As the vice-president, I assist in strategic planning, lead initiatives to strengthen our club's vision, and create opportunities for members to thrive.\"",
+        "linkedin": "https://www.linkedin.com/in/pranavsuri4/",
+        "instagram": "https://www.instagram.com/pranavsuri1/",
+        "github": "https://github.com/pranav-suri",
+        "id": 3
+    },
+    {
+        "name": "Mitiksha Paliwal",
+        "position": "TECHNICAL HEAD",
+        "description": "\"As the technical head, I lead our coding initiatives, mentor members in honing their skills, and drive innovation through impactful projects.\"",
+        "linkedin": "https://www.linkedin.com/in/mitiksha-paliwal/",
+        "instagram": "https://www.instagram.com/_paliwal28/",
+        "github": "https://github.com/Mitiksha-28",
+        "id": 4
+    },
+    {
+        "name": "Miran Firdausi",
+        "position": "TECHNICAL ADVISOR",
+        "description": "\"As a technical advisor, I aid the technical team by enlightening our members with new skills and technologies.\"",
+        "linkedin": "https://www.linkedin.com/in/miran-firdausi/",
+        "instagram": "https://www.instagram.com/mirvn.zzz",
+        "github": "https://github.com/Miran-Firdausi",
+        "id": 5
+    },
+    {
+        "name": "Ankush Dutta",
+        "position": "TECHNICAL HEAD",
+        "description": "\"My role involves cultivating coding talent, directing our technical pursuits, and pioneering new developments within the club.\"",
+        "linkedin": "https://www.linkedin.com/in/ankushdutta/",
+        "instagram": "https://instagram.com/_ehdee_",
+        "github": "https://github.com/gendelta",
+        "id": 6
+    },
+    {
+        "name": "Manasvi Pawa",
+        "position": "EVENTS HEAD",
+        "description": "\"As the events head, I plan and organize engaging activities, foster collaboration among members, and bring our club’s vision to life.\"",
+        "linkedin": "https://www.linkedin.com/in/manasvi-pawa-4a92b532b/",
+        "instagram": "https://www.instagram.com/manasvi._22/",
+        "github": "https://github.com/manasvipawa",
+        "id": 7
+    },
+    {
+        "name": "Amannyu Gondkar",
+        "position": "MEDIA HEAD",
+        "description": "\"As the media head, I work to highlight our team's achievements, expand our media outreach, and foster a thriving tech community.\"",
+        "linkedin": "https://www.linkedin.com/in/amannyu-gondkar-4786392a4/",
+        "instagram": "https://www.instagram.com/amannyu.gondkar/",
+        "github": "https://github.com/amannyugondkar",
+        "id": 8
+    }
+]
