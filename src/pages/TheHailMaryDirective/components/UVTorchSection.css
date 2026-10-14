@@ -1,0 +1,143 @@
+@scope (.hailmary-page) {
+  .uv-section {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .uv-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    z-index: 20;
+  }
+
+  .uv-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #fff;
+    letter-spacing: 4px;
+  }
+
+  .uv-subtitle {
+    font-family: var(--font-mono);
+    color: var(--c-cyan);
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .uv-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background: #050508;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: crosshair;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Background grid for texture */
+  .uv-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+  }
+
+  .uv-paper-blank {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .uv-decoy-text {
+    font-family: var(--font-mono);
+    color: rgba(255, 255, 255, 0.05);
+    font-size: 1.2rem;
+    text-align: center;
+    user-select: none;
+    padding: 2rem;
+  }
+
+  .uv-paper-revealed {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 240, 255, 0.03);
+    z-index: 3;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* The magic mask */
+    mask-image: radial-gradient(circle 120px at var(--mx) var(--my),
+        white 30%,
+        rgba(255, 255, 255, 0.5) 60%,
+        transparent 100%);
+    -webkit-mask-image: radial-gradient(circle 120px at var(--mx) var(--my),
+        white 30%,
+        rgba(255, 255, 255, 0.5) 60%,
+        transparent 100%);
+
+    pointer-events: none;
+  }
+
+  /* Glowing halo on the flashlight */
+  .uv-paper-revealed::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle 120px at var(--mx) var(--my),
+        transparent 60%,
+        rgba(0, 240, 255, 0.15) 80%,
+        transparent 100%);
+  }
+
+  .uv-secret-content {
+    color: var(--c-cyan);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
+  }
+
+  .uv-secret-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .uv-secret-text {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .uv-secret-title {
+      font-size: 1.5rem;
+    }
+
+    .uv-secret-text {
+      font-size: 0.9rem;
+    }
+
+    .uv-paper-revealed {
+      padding: 2rem;
+    }
+  }
+}

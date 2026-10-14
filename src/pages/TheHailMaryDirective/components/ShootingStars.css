@@ -1,0 +1,46 @@
+@scope (.hailmary-page) {
+  .shooting-stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    /* Render behind all UI but above the canvas */
+    overflow: hidden;
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1), transparent);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: hm-shooting-star linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px var(--c-cyan);
+  }
+
+  /* 
+  The star flashes across the screen quickly, then stays invisible for the rest of the animation duration.
+  This creates random, sporadic shooting stars instead of a constant rain.
+*/
+  @keyframes hm-shooting-star {
+    0% {
+      transform: translateX(100vw) translateY(-50vh) rotate(-45deg);
+      opacity: 1;
+    }
+
+    10% {
+      transform: translateX(-20vw) translateY(70vh) rotate(-45deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(-20vw) translateY(70vh) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+}

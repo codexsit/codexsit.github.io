@@ -17,6 +17,8 @@
   "dependencies": {
     "@fontsource/league-gothic": "^5.0.18",
     "@fontsource/poppins": "^5.0.8",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@vitejs/plugin-react": "^4.2.1",
     "baffle": "^0.3.6",
     "canvas": "^3.0.0",
@@ -33,6 +35,7 @@
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.4",
     "swiper": "^11.1.15",
+    "three": "^0.186.1",
     "vite": "^5.1.0"
   },
   "devDependencies": {

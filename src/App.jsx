@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import routes from "@/routes/index";
 import Navbar from "@/components/Navbar/index";
@@ -17,8 +17,14 @@ const navLinks = [
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },
   { name: "Contact Us", path: "/contact" },
-  { name: "Symbitech 2025", path: "/symbitech2025" },
+  { name: "SymbiTech", path: "/symbitech" },
 ];
+
+function RouteFooter() {
+  const { pathname } = useLocation();
+
+  return pathname === "/symbitech" ? null : <Footer />;
+}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,7 +54,7 @@ function App() {
                 />
               ))}
             </Routes>
-            <Footer />
+            <RouteFooter />
           </Router>
         )}
       </AnimatePresence>

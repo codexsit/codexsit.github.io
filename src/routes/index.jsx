@@ -6,7 +6,7 @@ import Contact from "@/pages/Contact";
 import PageNotFound from "../pages/PageNotFound";
 import Loader from "@/components/Loader";
 import Events from "../pages/Events";
-import TraitorsGambit from "../pages/TraitorsGambit";
+import TheHailMaryDirective from "../pages/TheHailMaryDirective";
 
 const routes = [
   {
@@ -58,10 +58,10 @@ const routes = [
     render: <PageNotFound />,
   },
   {
-    label: "TraitorsGambit",
-    path: "/symbitech2025",
+    label: "The Hail Mary Directive",
+    path: "/symbitech",
     requireAuth: false,
-    render: <TraitorsGambit />,
+    render: <TheHailMaryDirective />,
   },
 ];
 

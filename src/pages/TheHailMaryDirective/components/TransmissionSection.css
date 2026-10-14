@@ -1,0 +1,126 @@
+@scope (.hailmary-page) {
+  .transmission-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .terminal-container {
+    background: rgba(3, 3, 8, 0.8);
+    border: 1px solid var(--c-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 30px rgba(0, 240, 255, 0.05);
+    border-radius: 4px;
+    max-width: 800px;
+    width: 100%;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(0, 240, 255, 0.4);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .terminal-title {
+    font-family: var(--font-display);
+    color: var(--c-cyan);
+    font-size: 1rem;
+    letter-spacing: 4px;
+  }
+
+  .terminal-status {
+    font-family: var(--font-mono);
+    color: var(--c-red);
+    font-size: 0.8rem;
+    animation: hm-blink 1.5s infinite;
+  }
+
+  .terminal-body {
+    font-family: var(--font-mono);
+    color: var(--c-cyan);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+    position: relative;
+  }
+
+  .body-glitch {
+    animation: hm-main-glitch 0.2s linear infinite;
+  }
+
+  .body-glitch::before,
+  .body-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    white-space: pre-wrap;
+    /* Preserves the line breaks from the typewriter text */
+    pointer-events: none;
+  }
+
+  .body-glitch::before {
+    color: #0ff;
+    z-index: -1;
+    animation: hm-glitch-anim-1 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  }
+
+  .body-glitch::after {
+    color: #f0f;
+    z-index: -2;
+    animation: hm-glitch-anim-2 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.1em;
+    background-color: var(--c-cyan);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+    margin-left: 5px;
+  }
+
+  .scan-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 240, 255, 0.05) 50%,
+        rgba(0, 240, 255, 0.05));
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  @media (max-width: 768px) {
+    .terminal-container {
+      padding: 1.5rem;
+    }
+
+    .terminal-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .terminal-body {
+      font-size: 0.95rem;
+    }
+  }
+}

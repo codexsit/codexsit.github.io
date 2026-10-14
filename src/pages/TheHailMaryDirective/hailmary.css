@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@700;900&display=swap');
+
+@scope (.hailmary-page) {
+    :scope {
+        /* Palette */
+        --c-void: #030308;
+        --c-deep: #0a0a1a;
+        --c-surface: rgba(10, 14, 30, 0.7);
+        --c-red: #ff2a2a;
+        --c-red-glow: rgba(255, 42, 42, 0.5);
+        --c-cyan: #00f0ff;
+        --c-cyan-glow: rgba(0, 240, 255, 0.4);
+        --c-amber: #ffb300;
+        --c-amber-glow: rgba(255, 179, 0, 0.4);
+        --c-text: #e0e4f0;
+        --c-text-dim: #6a7090;
+
+        /* Typography */
+        --font-display: 'Orbitron', sans-serif;
+        --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        --font-body: 'Inter', sans-serif;
+
+        /* Glass */
+        --glass-bg: rgba(8, 10, 25, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --glass-blur: 16px;
+
+        /* Spacing scale */
+        --s-section: min(12vh, 120px);
+    }
+
+    :scope,
+    :scope * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :scope {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--c-void);
+        font-family: var(--font-body);
+        color: var(--c-text);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    /* Typography Utilities */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+    }
+
+    .mono {
+        font-family: var(--font-mono);
+    }
+
+    /* Glass Utilities */
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--glass-blur));
+        -webkit-backdrop-filter: blur(var(--glass-blur));
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+    }
+
+    /* Common Layout Utilities */
+    .section-container {
+        min-height: 100vh;
+        padding: var(--s-section) 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Canvas positioning */
+    .canvas-container {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Scroll content container */
+    .scroll-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Legacy UI from existing files (to keep HeroUI rendering nicely for now) */
+    .ui-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .hero-hud-card {
+        pointer-events: auto;
+        background: rgba(10, 12, 24, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 51, 51, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(255, 51, 51, 0.1);
+        padding: 2.5rem 3rem;
+        border-radius: 16px;
+        max-width: 780px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hud-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 0.8rem;
+    }
+
+    .badge-red {
+        background: rgba(255, 51, 51, 0.15);
+        color: #ff4d4d;
+        border: 1px solid rgba(255, 51, 51, 0.4);
+        padding: 0.25rem 0.6rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .organizer-tag {
+        font-size: 0.8rem;
+        color: #a0a5c0;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+
+    .event-title {
+        font-size: 3.2rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    .highlight-red {
+        color: #ff3333;
+        text-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
+    }
+
+    .event-tagline {
+        color: #c0c5e0;
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    /* Details Grid Layout */
+    /* Footer Status Bar */
+    .hud-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.8rem;
+        color: #ff3333;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    .pulse-icon {
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.3;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .event-title {
+            font-size: 2.2rem;
+        }
+
+        .specs-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .hud-header {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+}
