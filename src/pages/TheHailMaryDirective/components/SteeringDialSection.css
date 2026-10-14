@@ -1,0 +1,207 @@
+@scope (.hailmary-page) {
+  .dial-section {
+    width: 100%;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .dial-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .dial-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .dial-subtitle {
+    font-family: var(--font-mono);
+    color: var(--c-cyan);
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .dial-container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .dial-ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle, rgba(3, 3, 8, 1) 40%, rgba(15, 15, 25, 1) 100%);
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0, 240, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+  }
+
+  .dial-ring:active {
+    cursor: grabbing;
+  }
+
+  .dial-ring.success {
+    border-color: rgba(0, 255, 100, 0.5);
+    box-shadow: 0 0 50px rgba(0, 255, 100, 0.2), inset 0 0 30px rgba(0, 255, 100, 0.1);
+  }
+
+  .dial-leds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .dial-led {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .dial-led.target {
+    background: var(--c-cyan);
+    box-shadow: 0 0 15px var(--c-cyan);
+  }
+
+  .dial-led.locked {
+    background: #00ff66;
+    box-shadow: 0 0 20px #00ff66;
+    transform: scale(1.5) !important;
+  }
+
+  .dial-hub {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #111;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  .dial-ring.success .dial-hub {
+    border-color: #00ff66;
+    box-shadow: 0 0 25px #00ff66, inset 0 0 10px #00ff66;
+  }
+
+  .dial-needle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .dial-needle {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 130px;
+    background: linear-gradient(to bottom, var(--c-red), transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--c-red);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dial-ring.success .dial-needle {
+    background: linear-gradient(to bottom, #00ff66, transparent);
+    box-shadow: 0 0 20px #00ff66;
+  }
+
+  .dial-status {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    height: 2rem;
+    text-align: center;
+  }
+
+  .status-pending {
+    color: rgba(255, 255, 255, 0.4);
+    animation: hm-pulse-opacity 2s infinite;
+  }
+
+  .status-locked {
+    color: #00ff66;
+    text-shadow: 0 0 15px rgba(0, 255, 102, 0.6);
+    font-weight: bold;
+  }
+
+  @keyframes hm-pulse-opacity {
+
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Cinematic Flash Effect */
+  .cinematic-flash {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  :scope.screen-shake {
+    animation: hm-screen-shake 0.1s infinite;
+    overflow-x: hidden;
+  }
+
+  @keyframes hm-screen-shake {
+    0% {
+      transform: translate(10px, 10px)
+    }
+
+    25% {
+      transform: translate(-15px, 5px)
+    }
+
+    50% {
+      transform: translate(5px, -15px)
+    }
+
+    75% {
+      transform: translate(-10px, -10px)
+    }
+
+    100% {
+      transform: translate(10px, 10px)
+    }
+  }
+}

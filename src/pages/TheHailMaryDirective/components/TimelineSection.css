@@ -1,0 +1,311 @@
+@scope (.hailmary-page) {
+  .timeline-section {
+    width: 100%;
+    padding: 10rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  /* Premium Typography */
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 8rem;
+    position: relative;
+  }
+
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 240, 255, 0.4);
+    background: linear-gradient(to right, #fff, var(--c-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 8px;
+    text-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* The Core Structure */
+  .timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    perspective: 1200px;
+  }
+
+  /* Static Track */
+  .timeline-track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(-50%);
+  }
+
+  /* Dynamic Scrolling Laser Line */
+  .timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--c-cyan);
+    transform-origin: top;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px var(--c-cyan), 0 0 40px var(--c-cyan), 0 0 60px #fff;
+    z-index: 1;
+  }
+
+  /* Morse Code Animation */
+  .morse-code-pulse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    letter-spacing: 8px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+    animation: hm-pulse-morse 6s linear infinite;
+    text-shadow: 0 0 10px #fff;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @keyframes hm-pulse-morse {
+    0% {
+      top: 100%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 0.9;
+    }
+
+    90% {
+      opacity: 0.9;
+    }
+
+    100% {
+      top: 0%;
+      opacity: 0;
+    }
+  }
+
+  .timeline-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    position: relative;
+    padding: 4rem 0;
+  }
+
+  .timeline-node {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .timeline-node:nth-child(odd) {
+    justify-content: flex-start;
+  }
+
+  .timeline-node:nth-child(even) {
+    justify-content: flex-end;
+  }
+
+  /* Wrapper for alignment */
+  .timeline-card-wrapper {
+    width: 50%;
+    display: flex;
+    position: relative;
+    z-index: 5;
+  }
+
+  .timeline-node:nth-child(odd) .timeline-card-wrapper {
+    justify-content: flex-end;
+    padding-right: 4rem;
+  }
+
+  .timeline-node:nth-child(even) .timeline-card-wrapper {
+    justify-content: flex-start;
+    padding-left: 4rem;
+  }
+
+  /* HUD Cyberpunk Card Design */
+  .timeline-card {
+    background: rgba(5, 5, 12, 0.7);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 2.5rem;
+    backdrop-filter: blur(25px);
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    /* Diagonal cut corners */
+    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Reticle Corners */
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid var(--c-cyan);
+    border-left: 2px solid var(--c-cyan);
+  }
+
+  .timeline-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid var(--c-cyan);
+    border-right: 2px solid var(--c-cyan);
+  }
+
+  .timeline-node:hover .timeline-card {
+    border-color: rgba(0, 240, 255, 0.8);
+    box-shadow: 0 15px 40px rgba(0, 240, 255, 0.2), inset 0 0 30px rgba(0, 240, 255, 0.05);
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(10, 10, 20, 0.85);
+  }
+
+  /* Glowing Nodes */
+  .timeline-point-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .timeline-point {
+    width: 24px;
+    height: 24px;
+    background: #000;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .timeline-point::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  /* The magic scroll-activated state */
+  .timeline-point.active {
+    border-color: var(--c-cyan);
+    box-shadow: 0 0 20px var(--c-cyan), 0 0 40px var(--c-cyan);
+    transform: scale(1.3);
+  }
+
+  .timeline-point.active::after {
+    background: #fff;
+    box-shadow: 0 0 15px #fff;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Connective lines drawing in */
+  .timeline-connector {
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    z-index: 2;
+  }
+
+  .timeline-node:nth-child(odd) .timeline-connector {
+    right: 50%;
+    background: linear-gradient(270deg, var(--c-cyan), transparent);
+  }
+
+  .timeline-node:nth-child(even) .timeline-connector {
+    left: 50%;
+    background: linear-gradient(90deg, var(--c-cyan), transparent);
+  }
+
+  /* Content */
+  .node-number {
+    font-family: var(--font-mono);
+    color: var(--c-cyan);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .node-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .node-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+
+    .timeline-track,
+    .timeline-progress,
+    .timeline-point-container,
+    .morse-code-pulse {
+      left: 40px;
+    }
+
+    .timeline-node {
+      justify-content: flex-start !important;
+    }
+
+    .timeline-card-wrapper {
+      width: 100%;
+      justify-content: flex-start !important;
+      padding-left: 80px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+    }
+
+    .timeline-node:nth-child(odd) .timeline-connector,
+    .timeline-node:nth-child(even) .timeline-connector {
+      left: 40px;
+      right: auto;
+      background: linear-gradient(90deg, var(--c-cyan), transparent);
+    }
+  }
+}

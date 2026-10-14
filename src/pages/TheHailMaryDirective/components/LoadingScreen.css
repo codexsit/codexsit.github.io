@@ -1,0 +1,157 @@
+@scope (.hailmary-page) {
+  .loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: var(--c-void, #030308);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--c-text, #e0e4f0);
+  }
+
+  .loading-content {
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .loading-title {
+    font-family: var(--font-display, 'Orbitron', sans-serif);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: var(--c-cyan, #00f0ff);
+    text-shadow: 0 0 10px var(--c-cyan-glow, rgba(0, 240, 255, 0.4));
+  }
+
+  .loading-bar-container {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .loading-bar {
+    height: 100%;
+    background: var(--c-cyan, #00f0ff);
+    box-shadow: 0 0 10px var(--c-cyan-glow, rgba(0, 240, 255, 0.4));
+  }
+
+  .loading-percentage {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.9rem;
+    color: var(--c-text-dim, #6a7090);
+  }
+
+  .scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(0, 240, 255, 0.1);
+    animation: hm-loading-scan 2s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes hm-loading-scan {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .enter-button {
+    margin-top: 1rem;
+    padding: 1.2rem 3rem;
+    background: rgba(255, 42, 42, 0.1);
+    border: 1px solid var(--c-red, #ff2a2a);
+    color: #fff;
+    font-family: var(--font-display, 'Orbitron', sans-serif);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  .enter-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: linear-gradient(to top, var(--c-red, #ff2a2a), #ff6b6b);
+    z-index: -1;
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .enter-button:hover::before {
+    height: 100%;
+  }
+
+  .enter-button:hover {
+    animation: hm-loading-shake 0.4s infinite;
+    box-shadow: 0 0 30px rgba(255, 42, 42, 0.6);
+    color: #000;
+    font-weight: bold;
+    border-color: #ff6b6b;
+  }
+
+  @keyframes hm-loading-shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+}

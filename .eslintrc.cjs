@@ -7,6 +7,18 @@ module.exports = {
   plugins: ["prettier"],
   overrides: [
     {
+      files: [
+        "src/pages/TheHailMaryDirective/components/Asteroid.jsx",
+        "src/pages/TheHailMaryDirective/components/PlanetSystem.jsx",
+        "src/pages/TheHailMaryDirective/components/RoleSection.jsx",
+        "src/pages/TheHailMaryDirective/components/SpaceCanvas.jsx",
+        "src/pages/TheHailMaryDirective/components/Spaceship.jsx",
+      ],
+      rules: {
+        "react/no-unknown-property": "off",
+      },
+    },
+    {
       env: {
         node: true,
       },

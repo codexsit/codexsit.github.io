@@ -57,15 +57,14 @@ function Footer() {
                   { name: "Gallery", path: "/gallery" },
                   { name: "Events", path: "/events" },
                   { name: "Contact", path: "/contact" },
-                  { name: "SymbiTech2025", path: "/symbitech2025" },
+                  { name: "SymbiTech", path: "/symbitech" },
                 ].map((link) => (
                   <li
                     key={link.name}
-                    className={`cursor-pointer ${
-                      location.pathname === link.path
-                        ? "text-secondary-light"
-                        : ""
-                    }`}
+                    className={`cursor-pointer ${location.pathname === link.path
+                      ? "text-secondary-light"
+                      : ""
+                      }`}
                   >
                     <Link to={link.path} onClick={handleLinkClick}>
                       {link.name}
